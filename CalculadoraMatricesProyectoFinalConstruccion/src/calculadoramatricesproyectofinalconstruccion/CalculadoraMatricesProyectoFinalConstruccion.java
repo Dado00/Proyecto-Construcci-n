@@ -4,6 +4,10 @@
  */
 package calculadoramatricesproyectofinalconstruccion;
 
+import Vista.vistaCalculadora;
+import Vista.vistaCalculadora;
+import controlador.ControladorCalculadora;
+
 /**
  *
  * @author jairo
@@ -14,7 +18,10 @@ public class CalculadoraMatricesProyectoFinalConstruccion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //vistaCalculadora vista = new vistaCalculadora();
+        vistaCalculadora vista = new vistaCalculadora();
+        ControladorCalculadora controlador =new ControladorCalculadora(vista);
+        vista.setVisible(true);
     }
     
 }
