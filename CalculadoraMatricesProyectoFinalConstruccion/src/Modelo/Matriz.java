@@ -150,6 +150,46 @@ public class Matriz {
             }
         }
     }
+    
+         private float[][] resolverGaussJordan(float[][] matriz) {
+       
+        float[][] matrizResultado;
+        matrizResultado = matriz;
+        float reciproco;
+        //índice para marcar las filas 
+        int filas;
+        //índice para marcar las columnas
+        int columnas;
+        try {
+            for (filas = 0; filas < matrizResultado.length; filas++) {
+                if (matrizResultado[filas][filas] != 1) {
+                    reciproco = 1 / matrizResultado[filas][filas];
+
+                    for (columnas = 0; columnas < matrizResultado[0].length; columnas++) {
+                        matrizResultado[filas][columnas] = matrizResultado[filas][columnas]
+                                *reciproco;
+                    }
+                }
+                int pivoteFilas;
+                for (pivoteFilas = 0; pivoteFilas < matrizResultado.length; pivoteFilas++) {
+                    float inverso;
+                    if (pivoteFilas != filas) {
+                        inverso = -1 * matriz[pivoteFilas][filas];
+                        int columnaActual;
+                        for (columnaActual = 0; columnaActual < matriz[0].length; columnaActual++) {
+                            matriz[pivoteFilas][columnaActual] += matriz[filas][columnaActual]
+                                    * inverso;
+                        }
+                    }
+                }
+            }
+            return matrizResultado;
+        } catch (NullPointerException e) {
+            System.out.println("Error, fallo en la ejecución");
+        }
+        return null;
+    }
+    
 
     public double [ ][ ] getM(){
         return matriz;
