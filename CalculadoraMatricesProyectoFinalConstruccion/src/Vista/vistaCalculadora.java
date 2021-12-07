@@ -20,9 +20,9 @@ public class vistaCalculadora extends javax.swing.JFrame {
     public vistaCalculadora() {
         initComponents();
         this.OperacionSeleccionada.setVisible(false);
-//        this.getMatrizAPanel().setVisible(false);
-//        this.getMatrizBPanel().setVisible(false);
-//        this.getMatrizRPanel().setVisible(false);
+        this.getMatrizAPanel().setVisible(false);
+        this.getMatrizBPanel().setVisible(false);
+        this.getMatrizRPanel().setVisible(false);
     }
 
     /**
@@ -132,6 +132,7 @@ public class vistaCalculadora extends javax.swing.JFrame {
         matrizResCelda9 = new javax.swing.JTextField();
         CalcularButton = new javax.swing.JButton();
         OperacionSeleccionada = new javax.swing.JLabel();
+        tesst = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -442,8 +443,7 @@ public class vistaCalculadora extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(filasB, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(columnasB, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(columnasB, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         MatrizBPanelLayout.setVerticalGroup(
@@ -452,7 +452,6 @@ public class vistaCalculadora extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
                         .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(matrizBcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(matrizBcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -545,8 +544,7 @@ public class vistaCalculadora extends javax.swing.JFrame {
                 .addGroup(MatrizRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MatrizRPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addGap(68, 68, 68))
+                        .addComponent(jLabel3))
                     .addGroup(MatrizRPanelLayout.createSequentialGroup()
                         .addComponent(matrizResCelda21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -646,6 +644,8 @@ public class vistaCalculadora extends javax.swing.JFrame {
 
         OperacionSeleccionada.setText("Operacion");
 
+        tesst.setText("jButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -654,18 +654,10 @@ public class vistaCalculadora extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(transpuestaA)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(determinanteA)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(inversaA))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(multiplicaA)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(escalarA, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(673, 710, Short.MAX_VALUE))
+                        .addComponent(multiplicaA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(escalarA, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(673, 817, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(suma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -676,7 +668,16 @@ public class vistaCalculadora extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CalcularButton)
                             .addComponent(OperacionSeleccionada, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76))))
+                        .addGap(76, 76, 76))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(transpuestaA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(determinanteA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inversaA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tesst)
+                        .addGap(288, 288, 288))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(MatrizAPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -708,7 +709,9 @@ public class vistaCalculadora extends javax.swing.JFrame {
                 .addComponent(MatrizAPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(tesst)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(OperacionSeleccionada)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CalcularButton)
@@ -1312,6 +1315,7 @@ public class vistaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton multiplica;
     private javax.swing.JButton multiplicaA;
     private javax.swing.JButton suma;
+    private javax.swing.JButton tesst;
     private javax.swing.JButton transpuestaA;
     // End of variables declaration//GEN-END:variables
 }
