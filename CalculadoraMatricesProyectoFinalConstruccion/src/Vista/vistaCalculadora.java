@@ -25,6 +25,89 @@ public class vistaCalculadora extends javax.swing.JFrame {
         this.getMatrizAPanel().setVisible(false);
         this.getMatrizBPanel().setVisible(false);
         this.getMatrizRPanel().setVisible(false);
+        this.primeraMatriz = new JTextField[5][5];
+        this.segundaMatriz = new JTextField[5][5];
+        this.terceraMatriz = new JTextField[5][5];
+
+
+        primeraMatriz[0][0] = this.matrizAcelda1;
+        primeraMatriz[0][1] = this.matrizAcelda2;
+        primeraMatriz[0][2] = this.matrizAcelda3;
+        primeraMatriz[0][3] = this.matrizAcelda4;
+        primeraMatriz[0][4] = this.matrizAcelda5;
+        primeraMatriz[1][0] = this.matrizAcelda6;
+        primeraMatriz[1][1] = this.matrizAcelda7;
+        primeraMatriz[1][2] = this.matrizAcelda8;
+        primeraMatriz[1][3] = this.matrizAcelda9;
+        primeraMatriz[1][4] = this.matrizAcelda10;
+        primeraMatriz[2][0] = this.matrizAcelda11;
+        primeraMatriz[2][1] = this.matrizAcelda12;
+        primeraMatriz[2][2] = this.matrizAcelda13;
+        primeraMatriz[2][3] = this.matrizAcelda14;
+        primeraMatriz[2][4] = this.matrizAcelda15;
+        primeraMatriz[3][0] = this.matrizAcelda16;
+        primeraMatriz[3][1] = this.matrizAcelda17;
+        primeraMatriz[3][2] = this.matrizAcelda18;
+        primeraMatriz[3][3] = this.matrizAcelda19;
+        primeraMatriz[3][4] = this.matrizAcelda20;
+        primeraMatriz[4][0] = this.matrizAcelda21;
+        primeraMatriz[4][1] = this.matrizAcelda22;
+        primeraMatriz[4][2] = this.matrizAcelda23;
+        primeraMatriz[4][3] = this.matrizAcelda24;
+        primeraMatriz[4][4] = this.matrizAcelda25; 
+
+        segundaMatriz[0][0] = this.matrizBcelda1;
+        segundaMatriz[0][1] = this.matrizBcelda2;
+        segundaMatriz[0][2] = this.matrizBcelda3;
+        segundaMatriz[0][3] = this.matrizBcelda4;
+        segundaMatriz[0][4] = this.matrizBcelda5;
+        segundaMatriz[1][0] = this.matrizBcelda6;
+        segundaMatriz[1][1] = this.matrizBcelda7;
+        segundaMatriz[1][2] = this.matrizBcelda8;
+        segundaMatriz[1][3] = this.matrizBcelda9;
+        segundaMatriz[1][4] = this.matrizBcelda10;
+        segundaMatriz[2][0] = this.matrizBcelda11;
+        segundaMatriz[2][1] = this.matrizBcelda12;
+        segundaMatriz[2][2] = this.matrizBcelda13;
+        segundaMatriz[2][3] = this.matrizBcelda14;
+        segundaMatriz[2][4] = this.matrizBcelda15;
+        segundaMatriz[3][0] = this.matrizBcelda16;
+        segundaMatriz[3][1] = this.matrizBcelda17;
+        segundaMatriz[3][2] = this.matrizBcelda18;
+        segundaMatriz[3][3] = this.matrizBcelda19;
+        segundaMatriz[3][4] = this.matrizBcelda20;
+        segundaMatriz[4][0] = this.matrizBcelda21;
+        segundaMatriz[4][1] = this.matrizBcelda22;
+        segundaMatriz[4][2] = this.matrizBcelda23;
+        segundaMatriz[4][3] = this.matrizBcelda24;
+        segundaMatriz[4][4] = this.matrizBcelda25;
+
+        terceraMatriz[0][0] = this.matrizResCelda1;
+        terceraMatriz[0][1] = this.matrizResCelda2;
+        terceraMatriz[0][2] = this.matrizResCelda3;
+        terceraMatriz[0][3] = this.matrizResCelda4;
+        terceraMatriz[0][4] = this.matrizResCelda5;
+        terceraMatriz[1][0] = this.matrizResCelda6;
+        terceraMatriz[1][1] = this.matrizResCelda7;
+        terceraMatriz[1][2] = this.matrizResCelda8;
+        terceraMatriz[1][3] = this.matrizResCelda9;
+        terceraMatriz[1][4] = this.matrizResCelda10;
+        terceraMatriz[2][0] = this.matrizResCelda11;
+        terceraMatriz[2][1] = this.matrizResCelda12;
+        terceraMatriz[2][2] = this.matrizResCelda13;
+        terceraMatriz[2][3] = this.matrizResCelda14;
+        terceraMatriz[2][4] = this.matrizResCelda15;
+        terceraMatriz[3][0] = this.matrizResCelda16;
+        terceraMatriz[3][1] = this.matrizResCelda17;
+        terceraMatriz[3][2] = this.matrizResCelda18;
+        terceraMatriz[3][3] = this.matrizResCelda19;
+        terceraMatriz[3][4] = this.matrizResCelda20;
+        terceraMatriz[4][0] = this.matrizResCelda21;
+        terceraMatriz[4][1] = this.matrizResCelda22;
+        terceraMatriz[4][2] = this.matrizResCelda23;
+        terceraMatriz[4][3] = this.matrizResCelda24;
+        terceraMatriz[4][4] = this.matrizResCelda25;
+
     }
 
     /**
@@ -38,13 +121,12 @@ public class vistaCalculadora extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         metodoGauss = new javax.swing.JButton();
-        multiplica = new javax.swing.JButton();
+        multiplicarMatrices = new javax.swing.JButton();
         suma = new javax.swing.JButton();
-        escalarA = new javax.swing.JTextField();
-        multiplicaA = new javax.swing.JButton();
-        inversaA = new javax.swing.JButton();
-        determinanteA = new javax.swing.JButton();
-        transpuestaA = new javax.swing.JButton();
+        escalar = new javax.swing.JTextField();
+        multiplicaEscalar = new javax.swing.JButton();
+        inversa = new javax.swing.JButton();
+        determinante = new javax.swing.JButton();
         MatrizAPanel = new javax.swing.JPanel();
         matrizAcelda1 = new javax.swing.JTextField();
         matrizAcelda2 = new javax.swing.JTextField();
@@ -89,7 +171,6 @@ public class vistaCalculadora extends javax.swing.JFrame {
         matrizBcelda8 = new javax.swing.JTextField();
         matrizBcelda9 = new javax.swing.JTextField();
         matrizBcelda16 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         matrizBcelda1 = new javax.swing.JTextField();
         matrizBcelda2 = new javax.swing.JTextField();
         matrizBcelda3 = new javax.swing.JTextField();
@@ -99,6 +180,7 @@ public class vistaCalculadora extends javax.swing.JFrame {
         matrizBcelda18 = new javax.swing.JTextField();
         matrizBcelda23 = new javax.swing.JTextField();
         matrizBcelda24 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         MatrizRPanel = new javax.swing.JPanel();
         matrizResCelda25 = new javax.swing.JTextField();
         matrizResCelda22 = new javax.swing.JTextField();
@@ -136,6 +218,7 @@ public class vistaCalculadora extends javax.swing.JFrame {
         filasB = new javax.swing.JTextField();
         mostrarMatrizA = new javax.swing.JButton();
         mostrarMatrizB = new javax.swing.JButton();
+        cramer = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,17 +235,15 @@ public class vistaCalculadora extends javax.swing.JFrame {
 
         metodoGauss.setText("Gauss-Jordan");
 
-        multiplica.setText("Multiplicar");
+        multiplicarMatrices.setText("Multiplicar");
 
         suma.setText("Sumar");
 
-        multiplicaA.setText("Multiplicar por:");
+        multiplicaEscalar.setText("Multiplicar por:");
 
-        inversaA.setText("Inversa");
+        inversa.setText("Inversa");
 
-        determinanteA.setText("Determinante");
-
-        transpuestaA.setText("Transpuesta");
+        determinante.setText("Determinante");
 
         matrizAcelda1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,16 +346,6 @@ public class vistaCalculadora extends javax.swing.JFrame {
                         .addComponent(matrizAcelda25, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MatrizAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(MatrizAPanelLayout.createSequentialGroup()
-                            .addComponent(matrizAcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(matrizAcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(matrizAcelda3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(matrizAcelda4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(matrizAcelda5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(MatrizAPanelLayout.createSequentialGroup()
                             .addComponent(matrizAcelda6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(matrizAcelda7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -283,17 +354,27 @@ public class vistaCalculadora extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(matrizAcelda9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(matrizAcelda10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(matrizAcelda10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(MatrizAPanelLayout.createSequentialGroup()
+                            .addComponent(matrizAcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(matrizAcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(matrizAcelda3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(matrizAcelda4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(matrizAcelda5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
             .addGroup(MatrizAPanelLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
+                .addGap(112, 112, 112)
                 .addComponent(jLabel1))
         );
         MatrizAPanelLayout.setVerticalGroup(
             MatrizAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MatrizAPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
                 .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(MatrizAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(matrizAcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(matrizAcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -337,7 +418,11 @@ public class vistaCalculadora extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Matriz B");
+        matrizBcelda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matrizBcelda1ActionPerformed(evt);
+            }
+        });
 
         matrizBcelda2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,111 +436,112 @@ public class vistaCalculadora extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Matriz B");
+
         javax.swing.GroupLayout MatrizBPanelLayout = new javax.swing.GroupLayout(MatrizBPanel);
         MatrizBPanel.setLayout(MatrizBPanelLayout);
         MatrizBPanelLayout.setHorizontalGroup(
             MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
                 .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addComponent(matrizBcelda6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addComponent(matrizBcelda11, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda12, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda13, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda15, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addComponent(matrizBcelda16, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda20, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addComponent(matrizBcelda21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda22, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda23, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda24, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda25, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addComponent(matrizBcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matrizBcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
                             .addGroup(MatrizBPanelLayout.createSequentialGroup()
+                                .addComponent(matrizBcelda6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MatrizBPanelLayout.createSequentialGroup()
+                                .addComponent(matrizBcelda11, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda12, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda13, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda15, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MatrizBPanelLayout.createSequentialGroup()
+                                .addComponent(matrizBcelda16, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda20, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MatrizBPanelLayout.createSequentialGroup()
+                                .addComponent(matrizBcelda21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda22, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda23, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda24, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda25, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MatrizBPanelLayout.createSequentialGroup()
+                                .addComponent(matrizBcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matrizBcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(matrizBcelda3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(matrizBcelda4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(matrizBcelda5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(matrizBcelda5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(jLabel2)))
                 .addGap(10, 10, 10))
         );
         MatrizBPanelLayout.setVerticalGroup(
             MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(matrizBcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(109, 109, 109))
-                    .addGroup(MatrizBPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(56, 56, 56)
-                        .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(matrizBcelda6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(matrizBcelda11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(matrizBcelda16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(matrizBcelda21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matrizBcelda25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(matrizBcelda1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(matrizBcelda6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(matrizBcelda11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(matrizBcelda16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MatrizBPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(matrizBcelda21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(matrizBcelda25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -504,9 +590,6 @@ public class vistaCalculadora extends javax.swing.JFrame {
             .addGroup(MatrizRPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(MatrizRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MatrizRPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3))
                     .addGroup(MatrizRPanelLayout.createSequentialGroup()
                         .addComponent(matrizResCelda21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -558,13 +641,17 @@ public class vistaCalculadora extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(matrizResCelda5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MatrizRPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(96, 96, 96))
         );
         MatrizRPanelLayout.setVerticalGroup(
             MatrizRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MatrizRPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel3)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(MatrizRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(matrizResCelda1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(matrizResCelda2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -614,6 +701,12 @@ public class vistaCalculadora extends javax.swing.JFrame {
             }
         });
 
+        filasA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filasAActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Dimensiones de la matriz B:");
 
         columnasB.addActionListener(new java.awt.event.ActionListener() {
@@ -636,6 +729,8 @@ public class vistaCalculadora extends javax.swing.JFrame {
             }
         });
 
+        cramer.setText("Cramer");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -643,9 +738,9 @@ public class vistaCalculadora extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(MatrizAPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(40, 40, 40)
                 .addComponent(MatrizBPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(MatrizRPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
             .addGroup(layout.createSequentialGroup()
@@ -672,46 +767,43 @@ public class vistaCalculadora extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(suma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(multiplica)
+                        .addComponent(multiplicarMatrices)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(metodoGauss))
+                        .addComponent(metodoGauss)
+                        .addGap(18, 18, 18)
+                        .addComponent(cramer)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(determinante)
+                            .addComponent(multiplicaEscalar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(transpuestaA)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(determinanteA)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(inversaA))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(multiplicaA)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(escalarA, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(103, 103, 103)
-                .addComponent(CalcularButton)
-                .addGap(58, 58, 58)
+                            .addComponent(escalar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inversa))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CalcularButton)))
+                .addGap(18, 18, 18)
                 .addComponent(OperacionSeleccionada, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(393, 393, 393))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(determinanteA, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(transpuestaA)
-                        .addComponent(inversaA)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(multiplicaA)
-                    .addComponent(escalarA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inversa)
+                    .addComponent(determinante, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(multiplicaEscalar)
+                    .addComponent(escalar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(suma)
-                    .addComponent(multiplica)
-                    .addComponent(metodoGauss))
+                    .addComponent(multiplicarMatrices)
+                    .addComponent(metodoGauss)
+                    .addComponent(cramer))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -724,17 +816,21 @@ public class vistaCalculadora extends javax.swing.JFrame {
                     .addComponent(mostrarMatrizB))
                 .addGap(18, 18, 18)
                 .addComponent(MatrizAPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CalcularButton)
                     .addComponent(OperacionSeleccionada))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MatrizBPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MatrizRPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MatrizRPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(MatrizBPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -747,10 +843,6 @@ public class vistaCalculadora extends javax.swing.JFrame {
     private void matrizAcelda17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizAcelda17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_matrizAcelda17ActionPerformed
-
-    private void matrizBcelda4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_matrizBcelda4ActionPerformed
 
     private void matrizAcelda24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizAcelda24ActionPerformed
         // TODO add your handling code here:
@@ -804,14 +896,6 @@ public class vistaCalculadora extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_matrizAcelda12ActionPerformed
 
-    private void matrizBcelda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_matrizBcelda2ActionPerformed
-
-    private void matrizBcelda10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_matrizBcelda10ActionPerformed
-
     private void matrizResCelda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizResCelda2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_matrizResCelda2ActionPerformed
@@ -831,6 +915,26 @@ public class vistaCalculadora extends javax.swing.JFrame {
     private void mostrarMatrizBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarMatrizBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mostrarMatrizBActionPerformed
+
+    private void filasAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filasAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_filasAActionPerformed
+
+    private void matrizBcelda4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matrizBcelda4ActionPerformed
+
+    private void matrizBcelda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matrizBcelda2ActionPerformed
+
+    private void matrizBcelda10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matrizBcelda10ActionPerformed
+
+    private void matrizBcelda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrizBcelda1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matrizBcelda1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -883,6 +987,22 @@ public class vistaCalculadora extends javax.swing.JFrame {
     public JPanel getMatrizRPanel() {
         return MatrizRPanel;
     }
+
+    public JTextField[][] getPrimeraMatriz() {
+        return primeraMatriz;
+    }
+
+    public JTextField[][] getSegundaMatriz() {
+        return segundaMatriz;
+    }
+
+    public JTextField[][] getTerceraMatriz() {
+        return terceraMatriz;
+    }
+
+    public JButton getCramer() {
+        return cramer;
+    }
     
     
 
@@ -894,12 +1014,12 @@ public class vistaCalculadora extends javax.swing.JFrame {
         return columnasB;
     }
 
-    public JButton getDeterminanteA() {
-        return determinanteA;
+    public JButton getDeterminante() {
+        return determinante;
     }
 
-    public JTextField getEscalarA() {
-        return escalarA;
+    public JTextField getEscalar() {
+        return escalar;
     }
 
     public JTextField getFilasA() {
@@ -910,28 +1030,24 @@ public class vistaCalculadora extends javax.swing.JFrame {
         return filasB;
     }
 
-    public JButton getInversaA() {
-        return inversaA;
+    public JButton getInversa() {
+        return inversa;
     }
 
     public JButton getMetodoGauss() {
         return metodoGauss;
     }
 
-    public JButton getMultiplica() {
-        return multiplica;
+    public JButton getMultiplicarMatrices() {
+        return multiplicarMatrices;
     }
 
-    public JButton getMultiplicaA() {
-        return multiplicaA;
+    public JButton getMultiplicaEscalar() {
+        return multiplicaEscalar;
     }
 
     public JButton getSuma() {
         return suma;
-    }
-
-    public JButton getTranspuestaA() {
-        return transpuestaA;
     }
 
     public JButton getCalcularButton() {
@@ -956,11 +1072,12 @@ public class vistaCalculadora extends javax.swing.JFrame {
     private javax.swing.JLabel OperacionSeleccionada;
     private javax.swing.JTextField columnasA;
     private javax.swing.JTextField columnasB;
-    private javax.swing.JButton determinanteA;
-    private javax.swing.JTextField escalarA;
+    private javax.swing.JButton cramer;
+    private javax.swing.JButton determinante;
+    private javax.swing.JTextField escalar;
     private javax.swing.JTextField filasA;
     private javax.swing.JTextField filasB;
-    private javax.swing.JButton inversaA;
+    private javax.swing.JButton inversa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1045,9 +1162,8 @@ public class vistaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton metodoGauss;
     private javax.swing.JButton mostrarMatrizA;
     private javax.swing.JButton mostrarMatrizB;
-    private javax.swing.JButton multiplica;
-    private javax.swing.JButton multiplicaA;
+    private javax.swing.JButton multiplicaEscalar;
+    private javax.swing.JButton multiplicarMatrices;
     private javax.swing.JButton suma;
-    private javax.swing.JButton transpuestaA;
     // End of variables declaration//GEN-END:variables
 }

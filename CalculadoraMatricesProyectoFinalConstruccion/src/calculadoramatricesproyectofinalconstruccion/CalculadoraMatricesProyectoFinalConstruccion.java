@@ -5,7 +5,6 @@
 package calculadoramatricesproyectofinalconstruccion;
 
 import Vista.vistaCalculadora;
-import Vista.vistaCalculadora;
 import controlador.ControladorCalculadora;
 
 /**
@@ -18,7 +17,6 @@ public class CalculadoraMatricesProyectoFinalConstruccion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //vistaCalculadora vista = new vistaCalculadora();
         vistaCalculadora vista = new vistaCalculadora();
         ControladorCalculadora controlador =new ControladorCalculadora(vista);
         vista.setVisible(true);

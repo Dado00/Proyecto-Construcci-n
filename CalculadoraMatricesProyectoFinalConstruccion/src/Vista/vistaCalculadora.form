@@ -43,9 +43,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="MatrizAPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="MatrizBPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
               <Component id="MatrizRPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
           </Group>
@@ -74,31 +74,28 @@
                   <Group type="102" attributes="0">
                       <Component id="suma" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="multiplica" min="-2" max="-2" attributes="0"/>
+                      <Component id="multiplicarMatrices" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="metodoGauss" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="transpuestaA" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="determinanteA" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="inversaA" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="multiplicaA" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="escalarA" min="-2" pref="55" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cramer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="determinante" min="-2" max="-2" attributes="0"/>
+                          <Component id="multiplicaEscalar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="escalar" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="inversa" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="CalcularButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-              <Component id="CalcularButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="OperacionSeleccionada" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
           </Group>
@@ -107,24 +104,22 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="determinanteA" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="transpuestaA" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="inversaA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="multiplicaA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="escalarA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inversa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="determinante" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="multiplicaEscalar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="escalar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="suma" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="multiplica" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="multiplicarMatrices" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="metodoGauss" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cramer" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -139,7 +134,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="MatrizAPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -147,12 +142,18 @@
                   <Component id="CalcularButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="OperacionSeleccionada" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="MatrizBPanel" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="MatrizRPanel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="MatrizRPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                      <Component id="MatrizBPanel" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -163,7 +164,7 @@
         <Property name="text" type="java.lang.String" value="Gauss-Jordan"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="multiplica">
+    <Component class="javax.swing.JButton" name="multiplicarMatrices">
       <Properties>
         <Property name="text" type="java.lang.String" value="Multiplicar"/>
       </Properties>
@@ -173,26 +174,21 @@
         <Property name="text" type="java.lang.String" value="Sumar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="escalarA">
+    <Component class="javax.swing.JTextField" name="escalar">
     </Component>
-    <Component class="javax.swing.JButton" name="multiplicaA">
+    <Component class="javax.swing.JButton" name="multiplicaEscalar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Multiplicar por:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="inversaA">
+    <Component class="javax.swing.JButton" name="inversa">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inversa"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="determinanteA">
+    <Component class="javax.swing.JButton" name="determinante">
       <Properties>
         <Property name="text" type="java.lang.String" value="Determinante"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="transpuestaA">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Transpuesta"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="MatrizAPanel">
@@ -238,17 +234,6 @@
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="matrizAcelda1" min="-2" pref="45" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="matrizAcelda2" min="-2" pref="45" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="matrizAcelda3" min="-2" pref="45" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="matrizAcelda4" min="-2" pref="45" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="matrizAcelda5" min="-2" pref="45" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <Component id="matrizAcelda6" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="matrizAcelda7" min="-2" pref="45" max="-2" attributes="0"/>
@@ -259,11 +244,22 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="matrizAcelda10" min="-2" pref="45" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="matrizAcelda1" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="matrizAcelda2" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="matrizAcelda3" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="matrizAcelda4" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="matrizAcelda5" min="-2" pref="45" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -271,9 +267,9 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="matrizAcelda1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="matrizAcelda2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -412,60 +408,59 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="matrizBcelda6" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda7" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda8" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda9" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda10" min="-2" pref="45" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="matrizBcelda11" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda12" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda13" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda14" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda15" min="-2" pref="45" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="matrizBcelda16" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda17" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda18" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda19" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda20" min="-2" pref="45" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="matrizBcelda21" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda22" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda23" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda24" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda25" min="-2" pref="45" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="matrizBcelda1" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matrizBcelda2" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
+                                  <Component id="matrizBcelda6" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda7" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda8" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda9" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda10" min="-2" pref="45" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="matrizBcelda11" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda12" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda13" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda14" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda15" min="-2" pref="45" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="matrizBcelda16" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda17" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda18" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda19" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda20" min="-2" pref="45" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="matrizBcelda21" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda22" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda23" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda24" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda25" min="-2" pref="45" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="matrizBcelda1" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="matrizBcelda2" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="matrizBcelda3" min="-2" pref="45" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="matrizBcelda4" min="-2" pref="45" max="-2" attributes="0"/>
@@ -473,6 +468,10 @@
                                   <Component id="matrizBcelda5" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -482,53 +481,47 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="matrizBcelda1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="109" pref="109" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="matrizBcelda6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="matrizBcelda11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda15" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="matrizBcelda16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda20" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="matrizBcelda21" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda22" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda24" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="matrizBcelda25" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="matrizBcelda1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="matrizBcelda6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="matrizBcelda11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="matrizBcelda16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda17" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda19" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda20" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="matrizBcelda21" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda22" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda23" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda24" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="matrizBcelda25" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -571,12 +564,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="matrizBcelda16">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Matriz B"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="matrizBcelda1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="matrizBcelda1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="matrizBcelda2">
           <Events>
@@ -600,6 +591,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="matrizBcelda24">
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Matriz B"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="MatrizRPanel">
@@ -610,10 +606,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace pref="104" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="matrizResCelda21" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -672,14 +664,19 @@
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="matrizResCelda1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="matrizResCelda2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -821,6 +818,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="filasA">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filasAActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -849,6 +849,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mostrarMatrizBActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="cramer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cramer"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
