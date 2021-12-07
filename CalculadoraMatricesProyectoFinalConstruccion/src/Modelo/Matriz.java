@@ -1,8 +1,8 @@
 package Modelo;
 
-public class Matriz {
-    int FILAS_MAXIMAS = 5;
-    int COLUMNAS_MAXIMAS = 5;
+public class Matriz { 
+    int FILAS_MAXIMAS = 5;  //Número máximo de filas que puede tener una matriz 
+    int COLUMNAS_MAXIMAS = 5; //Número máximo de columnas que puede tener una matriz
     private int filas;
     private int columnas;
     private double[][] matriz;
@@ -99,7 +99,12 @@ public class Matriz {
         }
         return matrizResultado;
     }
-
+    /**
+     * Calcula la matriz inversa por el método de Gauss Jordan de una matriz cuadrada no singular
+     * @param matriz recibe la matriz al que se le calculará su inversa
+     * @return un arreglo que representa la matriz inversa
+     * @throws Exception Genera una excepción si la matriz no cumple con ser cuadrada o tener una determinante diferente a 0
+     */
     public double[][] matrizInversaGaussJordan(double[][] matriz) throws Exception {
         double[][] matrizIdentidad = new double[matriz.length][matriz.length];
         boolean esCuadrada = matriz.length == matriz[0].length;
@@ -119,7 +124,7 @@ public class Matriz {
     }
     /**
      * Calcula la determinante de una matriz no singular y cuadrada
-     * @param matriz Recibe la matrix de orden NxN
+     * @param matriz Recibe la matriz de orden NxN
      * @return Un número que es la determinante de la matriz
      * @throws Exception Genera un mensaje si la matriz no es cuadrada.
      */
@@ -160,7 +165,11 @@ public class Matriz {
             throw new Exception("Se necesita una matriz cuadrada para calcular la determinante");
         }
     }
-
+    /**
+     * Verifica si una matriz es de orden NxN, comparando su número de filas con el número de sus columnas
+     * @param matriz recibe una matriz.
+     * @return true si es una matriz de orden NxN, false de otro modo
+     */
     private boolean verificarMatrizCuadrada(double[][] matriz) {
         boolean esCuadrada = true;
         int filas = matriz.length;
@@ -170,7 +179,11 @@ public class Matriz {
         }
         return esCuadrada;
     }
-
+    /**
+     * Inicializa la matriz identidad colocando 1 en la diagonal principal y 0 en las 
+     * demás celdas
+     * @param matrizIdentidad matriz identidad a inicializar
+     */
     private void inicializarMatrizIdentidad(double[][] matrizIdentidad) {
         for (int fila = 0; fila < matrizIdentidad.length; fila++) {
             for (int columna = 0; columna < matrizIdentidad.length; columna++) {
@@ -183,7 +196,13 @@ public class Matriz {
 
         }
     }
-
+    /**
+     * Determina el pivote (escalar) que se utilizará para realizar la operación fundamental, 
+     * el cual consiste en multiplicar una fila de la matriz extendida por un escalar
+     * @param matriz Matriz con la cual determinaremos el pivote 
+     * @param pivote Escalar que se multiplicará por un renglón de la matriz
+     * @param matrizIdentidad Matriz identidad que se modificará conforme se vaya efectuando la operación fundamental
+     */
     private void modificarPivote(double[][] matriz, int pivote, double[][] matrizIdentidad) {
         double pivoteDivisor = 0;
         pivoteDivisor = matriz[pivote][pivote];
@@ -192,7 +211,13 @@ public class Matriz {
             matrizIdentidad[pivote][columna] = matrizIdentidad[pivote][columna] / pivoteDivisor;
         }
     }
-
+    /**
+     * Realiza la operación fundamental, el cual consiste en
+     * multiplicar una fila de la matriz extendida por un escalar
+     * @param matriz Matriz con la cual determinaremos el pivote 
+     * @param pivote Escalar que se multiplicará por un renglón de la matriz
+     * @param matrizIdentidad Matriz identidad que se modificará conforme se vaya efectuando la operación fundamental
+     */
     private void realizarOperacionFundamental(double[][] matriz, int pivote, double[][] matrizIdentidad) {
         for (int fila = 0; fila < matriz.length; fila++) {
             if (fila != pivote) {
@@ -205,14 +230,19 @@ public class Matriz {
             }
         }
     }
-
+    /**
+     * Resuelve un sistema de ecuaciones usando el método de Gauss Jordan
+     * @param matriz representa a los coeficientes de las variables a resolver.
+     * @param termino representa a los términos independientes de las ecuaciones
+     * @return  un arreglo con el resultado y el tamaño de las variables a resolver 
+     */
     public double[] resolverGaussJordan(double matriz[][], double termino[]) {
 
         // convertir la matriz aumentada en la matriz identidad
         for (int i = 0; i <= termino.length - 1; i++) {
             double pivote, fila = 0;
             pivote = matriz[i][i];// se seleciona el pivote
-            // se pasa a convertir en 1 al pivote seleionado
+            // se pasa a convertir en 1 al pivote selecionado
             for (int indice = 0; indice <= termino.length - 1; indice++) {
                 matriz[i][indice] = ((matriz[i][indice]) / pivote);
             }
@@ -230,7 +260,7 @@ public class Matriz {
                 }
             }
         }
-        return termino;// retorna terminos
+        return termino;
     }
 
     public double[][] getM() {

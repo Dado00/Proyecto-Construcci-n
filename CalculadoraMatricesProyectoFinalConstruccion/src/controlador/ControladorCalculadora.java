@@ -206,7 +206,13 @@ public class ControladorCalculadora implements ActionListener {
         }
 
     }
-
+    /**
+     * 
+     * @param matriz
+     * @param filas
+     * @param columnas
+     * @return
+     */
     private double[][] getData(JTextField[][] matriz, int filas, int columnas) {
         double[][] result = new double[filas][columnas];
         for (int i = 0; i < filas; i++) {
