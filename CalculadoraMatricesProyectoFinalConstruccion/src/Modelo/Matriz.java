@@ -63,14 +63,14 @@ public class Matriz {
 
     public double[][] multiplicarMatrices(double[][] matrizA, double[][] matrizB) throws Exception {
         double[][] matrizResultado = new double[matrizA.length][matrizB[0].length];
-        int filasMatrizA = matrizA.length;
-        int columnasMatrizB = matrizB[0].length;
-        if (filasMatrizA == columnasMatrizB) {
+        int columnasMatrizA = matrizA[0].length;
+        int filasMatrizB = matrizB.length;
+        if (columnasMatrizA == filasMatrizB) {
             int totalFilas = matrizA.length;
-            int totalColumnas = matrizA[0].length;
+            int totalColumnas = matrizB[0].length;
             for (int fila = 0; fila < totalFilas; fila++) {
                 for (int columna = 0; columna < totalColumnas; columna++) {
-                    for (int k = 0; k < totalColumnas; k++) {
+                    for (int k = 0; k < columnasMatrizA; k++) {
                         matrizResultado[fila][columna] += matrizA[fila][k] * matrizB[k][columna];
                     }
                 }
