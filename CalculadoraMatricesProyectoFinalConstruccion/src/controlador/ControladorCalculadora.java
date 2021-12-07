@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+import Modelo.Matriz;
+
 /**
  *
  * @author jairo
@@ -21,7 +23,7 @@ public class ControladorCalculadora implements ActionListener{
     String SUMA = "suma";
     String METODO_GAUSS = "metodo_gauss";
 
-    //Matriz modelo;
+    Matriz modelo;
     vistaCalculadora vista;
 
     public ControladorCalculadora(vistaCalculadora vista) {
@@ -37,7 +39,7 @@ public class ControladorCalculadora implements ActionListener{
         this.vista.getMetodoGauss().addActionListener(this);
         
         
-        this.vista.setAlwaysOnTop(true);
+        //this.vista.setAlwaysOnTop(true);
     }
 
     @Override
