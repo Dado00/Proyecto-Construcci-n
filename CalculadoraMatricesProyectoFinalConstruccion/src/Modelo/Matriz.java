@@ -6,29 +6,37 @@ public class Matriz {
     private int filas;
     private int columnas;
     private double[][] matriz;
-
+    
     public Matriz() {
         this.filas = FILAS_MAXIMAS;
         this.columnas = COLUMNAS_MAXIMAS;
         this.matriz = new double[FILAS_MAXIMAS][COLUMNAS_MAXIMAS];
     }
-
+    /**
+     * Crea una matriz recibiendo como parámetros el número de filas y número de columnas de la matriz.
+     * @param filas Número de filas
+     * @param columnas Número de columnas
+     */
     public Matriz(int filas, int columnas) {
         this.filas = filas;
         this.columnas = columnas;
         this.matriz = new double[filas][columnas];
     }
-
+    /**
+     * Inserta el valor de tipo double en la celda que se le indique.
+     * @param fila Fila en la que se va a insertar
+     * @param columna Columna en la que se va a insertar
+     * @param valor Número que se va a insertar
+     */
     public void insertar(int fila, int columna, int valor) {
         this.matriz[fila][columna] = valor;
     }
 
     /**
-     * Metodo que suma dos matrices si ambos son de forma MxN
-     * 
+     * Suma dos matrices si ambas son de forma MxN
      * @param matrizA primera matriz de orden MxN
      * @param matrizB segunda matriz de orden MxN
-     * @return matrizResultado: una matriz de orden MxN
+     * @return Una matriz de orden MxN con el resultado de la suma de cada celda 
      */
     public double[][] sumarMatrices(double[][] matrizA, double[][] matrizB) throws Exception {
         double[][] matrizResultado = new double[matrizA.length][matrizA[0].length];
@@ -48,7 +56,12 @@ public class Matriz {
         }
         return matrizResultado;
     }
-
+    /**
+     * Multiplica una matriz de orden MxN por un escalar C
+     * @param escalar recibe el escalar C
+     * @param matriz recibe la matriz de orden MxN a multiplicar por C
+     * @return Uma matriz de orden MxN donde cada celda es multiplicada por C
+     */
     public double[][] multiplicacionPorEscalar(double escalar, double[][] matriz) {
         double[][] nuevaResultado = new double[matriz.length][matriz[0].length];
         int totalFilas = matriz.length;
@@ -60,7 +73,13 @@ public class Matriz {
         }
         return nuevaResultado;
     }
-
+    /**
+     * Multiplica dos matrices si la primera matriz es de orden MxN y la segunda es de orden NxP
+     * @param matrizA Primera matriz de orden MxN
+     * @param matrizB Segunda matriz de orden NxP
+     * @return Una matriz de orden MxP con la multiplicación efectuada
+     * @throws Exception
+     */
     public double[][] multiplicarMatrices(double[][] matrizA, double[][] matrizB) throws Exception {
         double[][] matrizResultado = new double[matrizA.length][matrizB[0].length];
         int columnasMatrizA = matrizA[0].length;
