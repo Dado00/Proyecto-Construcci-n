@@ -151,43 +151,33 @@ public class Matriz {
         }
     }
     
-         private float[][] resolverGaussJordan(float[][] matriz) {
-       
-        float[][] matrizResultado;
-        matrizResultado = matriz;
-        float reciproco;
-        //índice para marcar las filas 
-        int filas;
-        //índice para marcar las columnas
-        int columnas;
-        try {
-            for (filas = 0; filas < matrizResultado.length; filas++) {
-                if (matrizResultado[filas][filas] != 1) {
-                    reciproco = 1 / matrizResultado[filas][filas];
+         public double[] resolverGaussJordan(double matriz[][], double termino[]) {
 
-                    for (columnas = 0; columnas < matrizResultado[0].length; columnas++) {
-                        matrizResultado[filas][columnas] = matrizResultado[filas][columnas]
-                                *reciproco;
+        // convertir la matriz aumentada en la matriz identidad
+        for (int i = 0; i <= termino.length - 1; i++) {
+            double pivote, fila = 0;
+            pivote = matriz[i][i];// se seleciona el pivote
+            // se pasa a convertir en 1 al pivote seleionado
+            for (int indice = 0; indice <= termino.length - 1; indice++) {
+                matriz[i][indice] = ((matriz[i][indice]) / pivote);
+            }
+            termino[i] = ((termino[i]) / pivote);
+
+            for (int x = 0; x <= termino.length - 1; x++) {
+                if (i != x) {
+                    fila = matriz[x][i];
+                   
+                    for (int columna = 0; columna<= termino.length - 1; columna++) {
+                        // se hace cero a todos los elementos de la colunma que no sean el pivote
+                        matriz[x][columna] = matriz[x][columna] - fila * matriz[i][columna];
+
                     }
-                }
-                int pivoteFilas;
-                for (pivoteFilas = 0; pivoteFilas < matrizResultado.length; pivoteFilas++) {
-                    float inverso;
-                    if (pivoteFilas != filas) {
-                        inverso = -1 * matriz[pivoteFilas][filas];
-                        int columnaActual;
-                        for (columnaActual = 0; columnaActual < matriz[0].length; columnaActual++) {
-                            matriz[pivoteFilas][columnaActual] += matriz[filas][columnaActual]
-                                    * inverso;
-                        }
-                    }
+                    termino[x] = termino[x] - fila * termino[i];         
                 }
             }
-            return matrizResultado;
-        } catch (NullPointerException e) {
-            System.out.println("Error, fallo en la ejecución");
         }
-        return null;
+        return termino;// retorna terminos
+
     }
     
 
