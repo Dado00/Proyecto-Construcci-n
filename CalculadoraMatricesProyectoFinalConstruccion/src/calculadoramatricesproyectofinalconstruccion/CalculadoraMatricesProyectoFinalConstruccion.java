@@ -18,8 +18,8 @@ public class CalculadoraMatricesProyectoFinalConstruccion {
      */
     public static void main(String[] args) {
         vistaCalculadora vista = new vistaCalculadora();
-        ControladorCalculadora controlador =new ControladorCalculadora(vista);
+        ControladorCalculadora controlador = new ControladorCalculadora(vista);
         vista.setVisible(true);
     }
-    
+
 }

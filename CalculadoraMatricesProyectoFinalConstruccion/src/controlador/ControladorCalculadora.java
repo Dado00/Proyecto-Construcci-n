@@ -120,7 +120,7 @@ public class ControladorCalculadora implements ActionListener {
                         double[] termino = getColumnaData(Integer.valueOf(this.vista.getFilasA().getText()),
                                 Integer.valueOf(this.vista.getColumnasA().getText()));
                         double[] result = model.resolverGaussJordan(matrizADouble, termino);
-                        setColumnaReslut(result);
+                        setColumnaResult(result);
                         this.vista.getFilasA().setEditable(true);
                         this.vista.getColumnasA().setEditable(true);
                         break;
@@ -226,7 +226,7 @@ public class ControladorCalculadora implements ActionListener {
         return result;
     }
 
-    private void setColumnaReslut(double[] result) {
+    private void setColumnaResult(double[] result) {
         for (int i = 0; i < FILAS_MAXIMAS; i++) {
             for (int j = 0; j < COLUMNAS_MAXIMAS; j++) {
                 this.terceraMatriz[i][j].setText(null);
