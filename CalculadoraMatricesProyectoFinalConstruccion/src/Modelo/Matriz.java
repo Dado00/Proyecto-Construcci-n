@@ -1,8 +1,8 @@
 package Modelo;
 
 public class Matriz { 
-    int FILAS_MAXIMAS = 5;  //Número máximo de filas que puede tener una matriz 
-    int COLUMNAS_MAXIMAS = 5; //Número máximo de columnas que puede tener una matriz
+    public final int FILAS_MAXIMAS = 5;  //Número máximo de filas que puede tener una matriz 
+    public final int COLUMNAS_MAXIMAS = 5; //Número máximo de columnas que puede tener una matriz
     private int filas;
     private int columnas;
     private double[][] matriz;
