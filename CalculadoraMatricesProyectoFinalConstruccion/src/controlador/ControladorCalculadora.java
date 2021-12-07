@@ -4,11 +4,10 @@
  */
 package controlador;
 
-import Modelo.Matriz;
 import Vista.vistaCalculadora;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,14 +20,13 @@ public class ControladorCalculadora implements ActionListener{
     String MULTIPLICAR = "multiplicar";
     String SUMA = "suma";
     String METODO_GAUSS = "metodo_gauss";
-    
 
-
-    Matriz modelo;
+    //Matriz modelo;
     vistaCalculadora vista;
 
     public ControladorCalculadora(vistaCalculadora vista) {
         this.vista = vista;
+        //modelo = Matriz;
         
         this.vista.getCalcularButton().addActionListener(this);
         this.vista.getTranspuestaA().addActionListener(this);
@@ -79,7 +77,7 @@ public class ControladorCalculadora implements ActionListener{
         }
         
         if(this.vista.getTranspuestaA() == e.getSource()){
-            
+
             this.vista.getOperacionSeleccionada().setText(this.TRANSPUESTA);
         }
         
