@@ -78,7 +78,7 @@ public class Matriz {
      * @param matrizA Primera matriz de orden MxN
      * @param matrizB Segunda matriz de orden NxP
      * @return Una matriz de orden MxP con la multiplicación efectuada
-     * @throws Exception
+     * @throws Exception Genera una excepción con un mensaje indicando que las matrices no pueden ser multiplicadas
      */
     public double[][] multiplicarMatrices(double[][] matrizA, double[][] matrizB) throws Exception {
         double[][] matrizResultado = new double[matrizA.length][matrizB[0].length];
@@ -117,7 +117,12 @@ public class Matriz {
         }
         return matrizIdentidad;
     }
-
+    /**
+     * Calcula la determinante de una matriz no singular y cuadrada
+     * @param matriz Recibe la matrix de orden NxN
+     * @return Un número que es la determinante de la matriz
+     * @throws Exception Genera un mensaje si la matriz no es cuadrada.
+     */
     public double calcularDeterminante(double[][] matriz) throws Exception {
         double determinante;
         boolean esCuadrada = verificarMatrizCuadrada(matriz);
