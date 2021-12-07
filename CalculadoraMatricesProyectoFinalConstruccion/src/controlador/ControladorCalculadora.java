@@ -49,21 +49,27 @@ public class ControladorCalculadora implements ActionListener{
             switch(this.vista.getOperacionSeleccionada().getText()){
                 case  "transpuesta":
                     
+                    this.vista.getOperacionSeleccionada().setText(null);
                     break;
                 case  "determinante":
                     
+                    this.vista.getOperacionSeleccionada().setText(null);
                     break;
                 case  "inversa":
                     
+                    this.vista.getOperacionSeleccionada().setText(null);
                     break;
                 case  "multiplicar":
                     
+                    this.vista.getOperacionSeleccionada().setText(null);
                     break;
                 case  "suma":
                     
+                    this.vista.getOperacionSeleccionada().setText(null);
                     break;
                 case  "metodo_gauss":
                     
+                    this.vista.getOperacionSeleccionada().setText(null);
                     break;
                 default :
                     JOptionPane.showMessageDialog(null, "Seleccione una operacion");
@@ -73,6 +79,7 @@ public class ControladorCalculadora implements ActionListener{
         }
         
         if(this.vista.getTranspuestaA() == e.getSource()){
+            
             this.vista.getOperacionSeleccionada().setText(this.TRANSPUESTA);
         }
         

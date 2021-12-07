@@ -1,5 +1,7 @@
 package Modelo;
 
+import javax.management.RuntimeErrorException;
+
 public class Matriz {
     private int filas;
     private int columnas;
@@ -12,14 +14,14 @@ public class Matriz {
     }
 
     public void insertar(int fila, int columna, int valor){
-        this.matriz [fila][columna]=valor;    
+        this.matriz [fila][columna]=valor;
     }
 
     /**
-     * Metodo que suma dos matrices si ambos son de forma mxn
-     * @param matrizA 
-     * @param matrizB
-     * @return
+     * Método que suma dos matrices si ambos son de forma mxn
+     * @param matrizA primera Matriz que se va a sumar de orden MxN
+     * @param matrizB segunda Matriz que se va a sumar de orden MxN
+     * @return matrizResultado: una matriz de orden MxN con cada celda sumada
      */
     public double [][] sumarMatrices(double [ ][ ] matrizA,double [ ][ ] matrizB ){
         double [][] matrizResultado = new double [matrizA.length][matrizA[0].length];
@@ -34,11 +36,16 @@ public class Matriz {
                     
                 }
             }
-        }
+        } 
        return matrizResultado; 
     }
 
-
+    /**
+     * Multiplica la matriz por un escalar C
+     * @param escalar Escalar por el cual se va a multiplicar la matriz
+     * @param matriz Matriz a la cual se va a multiplicar
+     * @return nuevaMatriz: una matriz conde cada una de sus celdas sea multplicada por escalar C
+     */
     public double [ ][ ] multiplicacionPorEscalar(double escalar,double [ ][ ] matriz){
         double [ ][ ] nuevaResultado= new double [matriz.length][matriz[0].length] ;
         int totalFilas = matriz.length;
@@ -51,6 +58,12 @@ public class Matriz {
         return nuevaResultado; 
     }
 
+    /**
+     * Multiplica dos matrices que deben ser de orden MxN y NxP
+     * @param matrizA primera matriz de orden MxN
+     * @param matrizB segunda matriz de orden NxP
+     * @return matrizResultado: Una matriz de orden MxP
+     */
     public double [ ][ ] multiplicarMatrices(double [ ][ ] matrizA,double [ ][ ] matrizB ){
         double [ ][ ] matrizResultado=new double [matrizA.length][matrizB[0].length];
         int columnasMatrizA = matrizA[0].length;
@@ -69,6 +82,11 @@ public class Matriz {
         return matrizResultado;
     }
 
+    /**
+     * Método que devuelve la inversa de una matriz por el Método de Gauss-Jordan
+     * @param matriz es la matriz de entrada, debe ser de orden NxN y No singular
+     * @return matrizIdentidad: 
+     */
     public double [][] matrizInversaGaussJordan(double [][]matriz){
         double[][] matrizIdentidad = new double[matriz.length][matriz.length];
         boolean esCuadrada= matriz.length == matriz[0].length;
@@ -87,6 +105,11 @@ public class Matriz {
         return matrizIdentidad;
     }
 
+    /**
+     * Calcula la determinante de una matriz de orden NxN
+     * @param matriz 
+     * @return
+     */
     public double calcularDeterminante(double [][]matriz){
         double determinante;
         if(matriz.length == 2){
@@ -150,6 +173,10 @@ public class Matriz {
             }
         }
     }
+
+    
+
+    
 
     public double [ ][ ] getM(){
         return matriz;
