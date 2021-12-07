@@ -173,6 +173,35 @@ public class Matriz {
             }
         }
     }
+    
+      public double[] resolverGaussJordan(double matriz[][], double termino[]) {
+
+        // convertir la matriz aumentada en la matriz identidad
+        for (int i = 0; i <= termino.length - 1; i++) {
+            double pivote, fila = 0;
+            pivote = matriz[i][i];// se seleciona el pivote
+            // se pasa a convertir en 1 al pivote seleionado
+            for (int indice = 0; indice <= termino.length - 1; indice++) {
+                matriz[i][indice] = ((matriz[i][indice]) / pivote);
+            }
+            termino[i] = ((termino[i]) / pivote);
+
+            for (int x = 0; x <= termino.length - 1; x++) {
+                if (i != x) {
+                    fila = matriz[x][i];
+                   
+                    for (int columna = 0; columna<= termino.length - 1; columna++) {
+                        // se hace cero a todos los elementos de la colunma que no sean el pivote
+                        matriz[x][columna] = matriz[x][columna] - fila * matriz[i][columna];
+
+                    }
+                    termino[x] = termino[x] - fila * termino[i];         
+                }
+            }
+        }
+        return termino;// retorna terminos
+
+    }
 
     
 
