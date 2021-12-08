@@ -377,6 +377,30 @@ public class Matriz {
         }
         return termino;
     }
+	
+	 /**
+     * 
+     * @param entrada objeto tipo Matriz
+     * @param cofactorA 
+     * @param cofactorB
+     * @return 
+     */
+     public static double obtenerMatrizAdjunta(Matriz entrada, int cofactorA, int cofactorB){
+        Matriz matrizEvaluar= new Matriz( entrada.getColumnas() - 1, entrada.getFilas() - 1);
+        double resultado = 0;
+        int indiceA,indiceB;
+        for(int i=0;i<matrizEvaluar.getFilas();i++){	
+            indiceA = (i<cofactorA) ? i : i+1;
+            for(int l=0;l<matrizEvaluar.getFilas();l++){
+                indiceB = (l<cofactorB) ? l :  l+1;
+                double valorCofactor = entrada.obtenerCopiaMatriz()[indiceA][indiceB];
+                matrizEvaluar.setmatrizIndividual(valorCofactor, i, l);
+            }
+        }
+        resultado = (int)Math.pow(-1,cofactorA+cofactorB) * calcularDeterminante(matrizEvaluar);	
+        return resultado;				
+    }
+    
 
     public double[][] getM() {
         return matriz;
