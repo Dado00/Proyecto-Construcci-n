@@ -124,37 +124,46 @@ public class Matriz {
     }
     /**
      * Calcula la determinante de una matriz no singular y cuadrada
-     * @param matriz Recibe la matriz de orden NxN
+     * @param matrizEntrada Recibe la matriz de orden NxN
      * @return Un número que es la determinante de la matriz
+     * obtener determinate mediante cofactores 
      */
- public static double calcularDeterminante (double [][] matriz)
-	{
-            //Validar que la matriz no sea nula; debe tenga una longitud mayor a 0
-		assert matriz != null;
-		assert matriz.length>0;
-		assert matriz.length == matriz[0].length;
-		
-		double determinante = 0.0;
-		
-		int filas = matriz.length;
-		int columnas = matriz[0].length;
-		
-		// Si la matriz es 1x1, el determinante es el elemento de la matriz
-		if ((filas==1) && (columnas==1))
-			return matriz[0][0];
-		//Valor para ir cambiando el signo de los coeficientes
-		int signo=1;
-		for (int columna=0;columna<columnas;columna++)
-		{
-	// Obtiene el adjunto de fila=0, columna=columna, pero sin el signo.
-			double[][] submatriz = getSubmatriz(matriz, filas, columnas,
-					columna);
-			determinante = determinante + signo*matriz[0][columna]*calcularDeterminante(submatriz);
-			signo*=-1;
-		}
-		
-		return determinante;
-	}
+    public static double calcularDeterminante(Matriz matrizEntrada) {
+        
+        double[][] matrizAuxiliar= matrizEntrada.obtenerCopiaMatriz();
+        double determinante = 0;
+        switch ( matrizEntrada.getFilas()) {
+            
+            case 2: 
+                //Si es una matriz de 2x2
+                determinante = (
+                        (matrizAuxiliar[0][0] * matrizAuxiliar[1][1])
+                    -
+                        (matrizAuxiliar[1][0] * matrizAuxiliar[0][1])
+                    );
+                break;
+            case 3:
+                //Si es una matriz 3x3
+                determinante = (
+                        (matrizAuxiliar[0][0])*(matrizAuxiliar[1][1])*(matrizAuxiliar[2][2])+
+                        (matrizAuxiliar[1][0])*(matrizAuxiliar[2][1])*(matrizAuxiliar[0][2])+
+                        (matrizAuxiliar[2][0])*(matrizAuxiliar[0][1])*(matrizAuxiliar[1][2])
+                    )-(
+                        (matrizAuxiliar[2][0])*(matrizAuxiliar[1][1])*(matrizAuxiliar[0][2])+
+                        (matrizAuxiliar[1][0])*(matrizAuxiliar[0][1])*(matrizAuxiliar[2][2])+
+                        (matrizAuxiliar[0][0])*(matrizAuxiliar[2][1])*(matrizAuxiliar[1][2])
+                    );
+                break;
+            default:
+                //Matrices de mayor longitud
+                for(int filas = 0; filas < matrizEntrada.getFilas(); filas++){
+                    determinante += (matrizAuxiliar[filas][0] * obtenerMatrizAdjunta( matrizEntrada, filas, 0));
+                }
+
+        }
+        return determinante;
+        
+    }
 
 	/**
 	 *La submatriz resulta de elminar la primera fila y la columna que pasa como parámetro
@@ -176,6 +185,84 @@ public class Matriz {
 		}
 		return submatriz;
 	}
+	
+	  /**
+     * @param matrizEntrada Matriz object
+     * @param grado el orden de la matriz por resolver
+     * @return 
+     */
+    public static Matriz calcularCramer(Matriz matrizEntrada, int grado){
+        Matriz resultado = new Matriz(matrizEntrada.getFilas(), matrizEntrada.getColumnas());
+        resultado.setM(matrizEntrada.obtenerCopiaMatriz());
+        
+        double determinanteA = calcularDeterminante(matrizEntrada);
+        double resultados[] = new double[ resultado.getFilas() ];
+                
+        for (int coeficiente = 0; coeficiente < matrizEntrada.getColumnas()- 1; coeficiente++){
+            
+            Matriz matrizCoeficiente = cambiarColumnas(resultado, coeficiente, resultado.getColumnas() - 1);
+            double det = calcularDeterminante(matrizCoeficiente);
+            double value = det / determinanteA;
+            resultados[coeficiente] = value;
+            
+        }
+        
+        for (int filas = 0; filas < resultado.getFilas(); filas++){
+            resultado.setmatrizIndividual(resultados[filas], filas, resultado.getColumnas() - 1);
+        }
+        
+        for (int filas = 0; filas < resultado.getFilas(); filas++){
+            for (int columnas = 0; columnas < resultado.getColumnas() - 1; columnas++){
+                if (filas == columnas){
+                    resultado.setmatrizIndividual(1, filas, columnas);
+                } else {
+                    resultado.setmatrizIndividual(0, filas, columnas);
+                }
+            }
+        }
+        
+        return resultado;
+        
+    }
+    
+     public double[][] obtenerCopiaMatriz() {
+        
+        double matrizCopia[][] = new double[this.filas][this.columnas];
+        
+        for (int i = 0; i < filas; i++) {
+            
+            double matrizPivote[] = this.matriz[i];
+            int dimensionFilas = matrizPivote.length;
+            matrizCopia[i] = new double[dimensionFilas];
+            System.arraycopy(matrizPivote, 0, matrizCopia[i], 0, dimensionFilas);
+            
+        }  
+        return matrizCopia;
+    }
+    /**
+     * Método para intercambio de columnas
+     * @param entrada objeto matriz 
+     * @param columnaPrimera indice para guardar posición de la primera columna
+     * @param columnaSegunda indice para guardar posición de la primera columna
+     * @return 
+     */
+	
+    public static Matriz cambiarColumnas(Matriz entrada, int columnaPrimera, int columnaSegunda){
+        
+        Matriz resultado = new Matriz(entrada.getFilas(), entrada.getColumnas());
+        resultado.setM(entrada.obtenerCopiaMatriz());
+        
+        for (int filas = 0; filas < resultado.getFilas(); filas++){
+            
+            double cambio = resultado.getM()[filas][columnaSegunda];
+            resultado.setmatrizIndividual(resultado.getM()[filas][columnaPrimera], filas, columnaSegunda);
+            resultado.setmatrizIndividual(cambio, filas, columnaPrimera);
+            
+        }
+        return resultado;
+    }
+	
+	
     
     /**
      * Verifica si una matriz es de orden NxN, comparando su número de filas con el número de sus columnas
