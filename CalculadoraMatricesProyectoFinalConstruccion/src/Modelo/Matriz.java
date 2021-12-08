@@ -22,10 +22,6 @@ public class Matriz {
         this.columnas = columnas;
         this.matriz = new double[filas][columnas];
     }
-<<<<<<< HEAD
-
-    public void insertar(int fila, int columna, double valor) {
-=======
     /**
      * Inserta el valor de tipo double en la celda que se le indique.
      * @param fila Fila en la que se va a insertar
@@ -33,7 +29,6 @@ public class Matriz {
      * @param valor Número que se va a insertar
      */
     public void insertar(int fila, int columna, int valor) {
->>>>>>> cda364ad22d08bd568be0bf6b04d6e22ab7c6f83
         this.matriz[fila][columna] = valor;
     }
 
@@ -132,7 +127,7 @@ public class Matriz {
      * @param matriz Recibe la matriz de orden NxN
      * @return Un número que es la determinante de la matriz
      */
- public static double determinante (double [][] matriz)
+ public static double calcularDeterminante (double [][] matriz)
 	{
             //Validar que la matriz no sea nula; debe tenga una longitud mayor a 0
 		assert matriz != null;
@@ -154,7 +149,7 @@ public class Matriz {
 	// Obtiene el adjunto de fila=0, columna=columna, pero sin el signo.
 			double[][] submatriz = getSubmatriz(matriz, filas, columnas,
 					columna);
-			determinante = determinante + signo*matriz[0][columna]*determinante(submatriz);
+			determinante = determinante + signo*matriz[0][columna]*calcularDeterminante(submatriz);
 			signo*=-1;
 		}
 		
