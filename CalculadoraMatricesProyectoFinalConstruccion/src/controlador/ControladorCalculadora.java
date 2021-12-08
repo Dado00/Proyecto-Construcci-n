@@ -236,16 +236,11 @@ public class ControladorCalculadora implements ActionListener {
 
         return result;
     }
-<<<<<<< HEAD
-
-    private void setColumnaResult(double[] result) {
-=======
     /**
      * Establece los valores de la columna para que después de haber realizado la operación seleccionada
      * @param result el arreglo con los resultados 
      */
-    private void setColumnaReslut(double[] result) {
->>>>>>> cda364ad22d08bd568be0bf6b04d6e22ab7c6f83
+    private void setColumnaResult(double[] result) {
         for (int i = 0; i < FILAS_MAXIMAS; i++) {
             for (int j = 0; j < COLUMNAS_MAXIMAS; j++) {
                 this.terceraMatriz[i][j].setText(null);
