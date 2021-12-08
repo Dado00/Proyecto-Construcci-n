@@ -89,9 +89,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="escalar" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="inversa" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="inversa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="transpuesta" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="125" max="32767" attributes="0"/>
                       <Component id="CalcularButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -108,6 +112,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="inversa" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="determinante" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="transpuesta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -854,6 +859,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cramer"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="transpuesta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Transpuesta"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transpuestaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

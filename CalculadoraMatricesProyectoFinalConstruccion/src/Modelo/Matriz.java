@@ -1,20 +1,23 @@
 package Modelo;
 
-public class Matriz { 
-    public final int FILAS_MAXIMAS = 5;  //Número máximo de filas que puede tener una matriz 
-    public final int COLUMNAS_MAXIMAS = 5; //Número máximo de columnas que puede tener una matriz
+public class Matriz {
+    public final int FILAS_MAXIMAS = 5; // Número máximo de filas que puede tener una matriz
+    public final int COLUMNAS_MAXIMAS = 5; // Número máximo de columnas que puede tener una matriz
     private int filas;
     private int columnas;
     private double[][] matriz;
-    
+
     public Matriz() {
         this.filas = FILAS_MAXIMAS;
         this.columnas = COLUMNAS_MAXIMAS;
         this.matriz = new double[FILAS_MAXIMAS][COLUMNAS_MAXIMAS];
     }
+
     /**
-     * Crea una matriz recibiendo como parámetros el número de filas y número de columnas de la matriz.
-     * @param filas Número de filas
+     * Crea una matriz recibiendo como parámetros el número de filas y número de
+     * columnas de la matriz.
+     * 
+     * @param filas    Número de filas
      * @param columnas Número de columnas
      */
     public Matriz(int filas, int columnas) {
@@ -22,11 +25,13 @@ public class Matriz {
         this.columnas = columnas;
         this.matriz = new double[filas][columnas];
     }
+
     /**
      * Inserta el valor de tipo double en la celda que se le indique.
-     * @param fila Fila en la que se va a insertar
+     * 
+     * @param fila    Fila en la que se va a insertar
      * @param columna Columna en la que se va a insertar
-     * @param valor Número que se va a insertar
+     * @param valor   Número que se va a insertar
      */
     public void insertar(int fila, int columna, int valor) {
         this.matriz[fila][columna] = valor;
@@ -34,9 +39,10 @@ public class Matriz {
 
     /**
      * Suma dos matrices si ambas son de forma MxN
+     * 
      * @param matrizA primera matriz de orden MxN
      * @param matrizB segunda matriz de orden MxN
-     * @return Una matriz de orden MxN con el resultado de la suma de cada celda 
+     * @return Una matriz de orden MxN con el resultado de la suma de cada celda
      */
     public double[][] sumarMatrices(double[][] matrizA, double[][] matrizB) throws Exception {
         double[][] matrizResultado = new double[matrizA.length][matrizA[0].length];
@@ -56,26 +62,28 @@ public class Matriz {
         }
         return matrizResultado;
     }
-/**Transpuesta
- * 
- * @param mat
- * @return 
- */    
-    public double [ ][ ] transpuesta(double [ ][ ] mat){
-        double [ ][ ] matrizT=new double [mat[0].length][mat.length];
-        for(int i=0;i<mat.length;i++){
-            for(int j=0;j<mat[i].length;j++){
-                matrizT[j][i]=mat[i][j];
-                
-       
-             }
+
+    /**
+     * Calcular transpuesta de una matriz
+     * 
+     * @param matriz
+     * @return
+     */
+    public double[][] calcularTranspuesta(double[][] matriz) {
+        double[][] matrizT = new double[matriz[0].length][matriz.length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matrizT[j][i] = matriz[i][j];
+            }
         }
         return matrizT;
-    }	
+    }
+
     /**
      * Multiplica una matriz de orden MxN por un escalar C
+     * 
      * @param escalar recibe el escalar C
-     * @param matriz recibe la matriz de orden MxN a multiplicar por C
+     * @param matriz  recibe la matriz de orden MxN a multiplicar por C
      * @return Uma matriz de orden MxN donde cada celda es multiplicada por C
      */
     public double[][] multiplicacionPorEscalar(double escalar, double[][] matriz) {
@@ -89,12 +97,16 @@ public class Matriz {
         }
         return nuevaResultado;
     }
+
     /**
-     * Multiplica dos matrices si la primera matriz es de orden MxN y la segunda es de orden NxP
+     * Multiplica dos matrices si la primera matriz es de orden MxN y la segunda es
+     * de orden NxP
+     * 
      * @param matrizA Primera matriz de orden MxN
      * @param matrizB Segunda matriz de orden NxP
      * @return Una matriz de orden MxP con la multiplicación efectuada
-     * @throws Exception Genera una excepción con un mensaje indicando que las matrices no pueden ser multiplicadas
+     * @throws Exception Genera una excepción con un mensaje indicando que las
+     *                   matrices no pueden ser multiplicadas
      */
     public double[][] multiplicarMatrices(double[][] matrizA, double[][] matrizB) throws Exception {
         double[][] matrizResultado = new double[matrizA.length][matrizB[0].length];
@@ -115,11 +127,15 @@ public class Matriz {
         }
         return matrizResultado;
     }
+
     /**
-     * Calcula la matriz inversa por el método de Gauss Jordan de una matriz cuadrada no singular
+     * Calcula la matriz inversa por el método de Gauss Jordan de una matriz
+     * cuadrada no singular
+     * 
      * @param matriz recibe la matriz al que se le calculará su inversa
      * @return un arreglo que representa la matriz inversa
-     * @throws Exception Genera una excepción si la matriz no cumple con ser cuadrada o tener una determinante diferente a 0
+     * @throws Exception Genera una excepción si la matriz no cumple con ser
+     *                   cuadrada o tener una determinante diferente a 0
      */
     public double[][] matrizInversaGaussJordan(double[][] matriz) throws Exception {
         double[][] matrizIdentidad = new double[matriz.length][matriz.length];
@@ -138,165 +154,154 @@ public class Matriz {
         }
         return matrizIdentidad;
     }
+
     /**
      * Calcula la determinante de una matriz no singular y cuadrada
+     * 
      * @param matrizEntrada Recibe la matriz de orden NxN
      * @return Un número que es la determinante de la matriz
-     * obtener determinate mediante cofactores 
+     *         obtener determinate mediante cofactores
      */
-    public static double calcularDeterminante(Matriz matrizEntrada) {
-        
-        double[][] matrizAuxiliar= matrizEntrada.obtenerCopiaMatriz();
+    public double calcularDeterminante(double[][] matrizEntrada) {
+
         double determinante = 0;
-        switch ( matrizEntrada.getFilas()) {
-            
-            case 2: 
-                //Si es una matriz de 2x2
-                determinante = (
-                        (matrizAuxiliar[0][0] * matrizAuxiliar[1][1])
-                    -
-                        (matrizAuxiliar[1][0] * matrizAuxiliar[0][1])
-                    );
+        switch (matrizEntrada.length) {
+
+            case 2:
+                // Si es una matriz de 2x2
+                determinante = ((matrizEntrada[0][0] * matrizEntrada[1][1])
+                        -
+                        (matrizEntrada[1][0] * matrizEntrada[0][1]));
                 break;
             case 3:
-                //Si es una matriz 3x3
-                determinante = (
-                        (matrizAuxiliar[0][0])*(matrizAuxiliar[1][1])*(matrizAuxiliar[2][2])+
-                        (matrizAuxiliar[1][0])*(matrizAuxiliar[2][1])*(matrizAuxiliar[0][2])+
-                        (matrizAuxiliar[2][0])*(matrizAuxiliar[0][1])*(matrizAuxiliar[1][2])
-                    )-(
-                        (matrizAuxiliar[2][0])*(matrizAuxiliar[1][1])*(matrizAuxiliar[0][2])+
-                        (matrizAuxiliar[1][0])*(matrizAuxiliar[0][1])*(matrizAuxiliar[2][2])+
-                        (matrizAuxiliar[0][0])*(matrizAuxiliar[2][1])*(matrizAuxiliar[1][2])
-                    );
+                // Si es una matriz 3x3
+                determinante = ((matrizEntrada[0][0]) * (matrizEntrada[1][1]) * (matrizEntrada[2][2]) +
+                        (matrizEntrada[1][0]) * (matrizEntrada[2][1]) * (matrizEntrada[0][2]) +
+                        (matrizEntrada[2][0]) * (matrizEntrada[0][1]) * (matrizEntrada[1][2]))
+                        - ((matrizEntrada[2][0]) * (matrizEntrada[1][1]) * (matrizEntrada[0][2]) +
+                                (matrizEntrada[1][0]) * (matrizEntrada[0][1]) * (matrizEntrada[2][2]) +
+                                (matrizEntrada[0][0]) * (matrizEntrada[2][1]) * (matrizEntrada[1][2]));
                 break;
             default:
-                //Matrices de mayor longitud
-                for(int filas = 0; filas < matrizEntrada.getFilas(); filas++){
-                    determinante += (matrizAuxiliar[filas][0] * obtenerMatrizAdjunta( matrizEntrada, filas, 0));
+                // Matrices de mayor longitud
+                for (int filas = 0; filas < matrizEntrada.length; filas++) {
+                    determinante += (matrizEntrada[filas][0] * obtenerMatrizAdjunta(matrizEntrada, filas, 0));
                 }
 
         }
         return determinante;
-        
+
     }
 
-	/**
-	 *La submatriz resulta de elminar la primera fila y la columna que pasa como parámetro
-	 * @param matriz Matriz original
-	 * @param filas Numero de filas de la matriz original
-	 * @param columnas Numero de columnas de la matriz original
-	 * @param columna Columna que se quiere eliminar, junto con la fila=0
-	 * @return Una matriz de N-1 x N-1 elementos
-	 */
-	public static double[][] getSubmatriz(double[][] matriz, int filas,int columnas, int columna) {
-		double [][] submatriz = new double[filas-1][columnas-1];
-		int contador=0;
-		for (int j=0;j<columnas;j++)
-		{
-			if (j==columna) continue;
-			for (int i=1;i<filas;i++)
-				submatriz[i-1][contador]=matriz[i][j];
-			contador++;
-		}
-		return submatriz;
-	}
-	
-	  /**
-     * @param matrizEntrada Matriz object
-     * @param grado el orden de la matriz por resolver
-     * @return 
+    /**
+     * La submatriz resulta de elminar la primera fila y la columna que pasa como
+     * parámetro
+     * 
+     * @param matriz   Matriz original
+     * @param filas    Numero de filas de la matriz original
+     * @param columnas Numero de columnas de la matriz original
+     * @param columna  Columna que se quiere eliminar, junto con la fila=0
+     * @return Una matriz de N-1 x N-1 elementos
      */
-    public static Matriz calcularCramer(Matriz matrizEntrada, int grado){
-        Matriz resultado = new Matriz(matrizEntrada.getFilas(), matrizEntrada.getColumnas());
-        resultado.setM(matrizEntrada.obtenerCopiaMatriz());
-        
-        double determinanteA = calcularDeterminante(matrizEntrada);
-        double resultados[] = new double[ resultado.getFilas() ];
-                
-        for (int coeficiente = 0; coeficiente < matrizEntrada.getColumnas()- 1; coeficiente++){
-            
+    public static double[][] getSubmatriz(double[][] matriz, int filas, int columnas, int columna) {
+        double[][] submatriz = new double[filas - 1][columnas - 1];
+        int contador = 0;
+        for (int j = 0; j < columnas; j++) {
+            if (j == columna)
+                continue;
+            for (int i = 1; i < filas; i++)
+                submatriz[i - 1][contador] = matriz[i][j];
+            contador++;
+        }
+        return submatriz;
+    }
+
+    /**
+     * @param matrizEntrada Matriz object
+     * @param grado         el orden de la matriz por resolver
+     * @return
+     */
+    public double[] calcularCramer(double[][] matrizEntrada, int grado) {
+        Matriz resultado = new Matriz(matrizEntrada.length, matrizEntrada[0].length);
+        resultado.setM(matrizEntrada);
+
+        double determinanteA = resultado.calcularDeterminante(matrizEntrada);
+        double resultados[] = new double[resultado.getFilas()];
+
+        for (int coeficiente = 0; coeficiente < matrizEntrada[0].length - 1; coeficiente++) {
+
             Matriz matrizCoeficiente = cambiarColumnas(resultado, coeficiente, resultado.getColumnas() - 1);
-            double det = calcularDeterminante(matrizCoeficiente);
+            double det = resultado.calcularDeterminante(matrizCoeficiente.getM());
             double value = det / determinanteA;
             resultados[coeficiente] = value;
-            
+
         }
-        
-        for (int filas = 0; filas < resultado.getFilas(); filas++){
+
+        for (int filas = 0; filas < resultado.getFilas(); filas++) {
             resultado.setmatrizIndividual(resultados[filas], filas, resultado.getColumnas() - 1);
         }
-        
-        for (int filas = 0; filas < resultado.getFilas(); filas++){
-            for (int columnas = 0; columnas < resultado.getColumnas() - 1; columnas++){
-                if (filas == columnas){
+
+        for (int filas = 0; filas < resultado.getFilas(); filas++) {
+            for (int columnas = 0; columnas < resultado.getColumnas() - 1; columnas++) {
+                if (filas == columnas) {
                     resultado.setmatrizIndividual(1, filas, columnas);
                 } else {
                     resultado.setmatrizIndividual(0, filas, columnas);
                 }
             }
         }
-        
-        return resultado;
-        
+        double[] resultFinal = new double[resultado.getM().length];
+        for (int i = 0; i < resultado.getM().length; i++) {
+            resultFinal[i] = resultado.getM()[i][resultado.columnas - 1];
+        }
+        return resultFinal;
+
     }
-    
-     public double[][] obtenerCopiaMatriz() {
-        
+
+    public double[][] obtenerCopiaMatriz() {
+
         double matrizCopia[][] = new double[this.filas][this.columnas];
-        
+
         for (int i = 0; i < filas; i++) {
-            
+
             double matrizPivote[] = this.matriz[i];
             int dimensionFilas = matrizPivote.length;
             matrizCopia[i] = new double[dimensionFilas];
             System.arraycopy(matrizPivote, 0, matrizCopia[i], 0, dimensionFilas);
-            
-        }  
+
+        }
         return matrizCopia;
     }
+
     /**
      * Método para intercambio de columnas
-     * @param entrada objeto matriz 
+     * 
+     * @param entrada        objeto matriz
      * @param columnaPrimera indice para guardar posición de la primera columna
      * @param columnaSegunda indice para guardar posición de la primera columna
-     * @return 
+     * @return
      */
-	
-    public static Matriz cambiarColumnas(Matriz entrada, int columnaPrimera, int columnaSegunda){
-        
+
+    public static Matriz cambiarColumnas(Matriz entrada, int columnaPrimera, int columnaSegunda) {
+
         Matriz resultado = new Matriz(entrada.getFilas(), entrada.getColumnas());
         resultado.setM(entrada.obtenerCopiaMatriz());
-        
-        for (int filas = 0; filas < resultado.getFilas(); filas++){
-            
+
+        for (int filas = 0; filas < resultado.getFilas(); filas++) {
+
             double cambio = resultado.getM()[filas][columnaSegunda];
             resultado.setmatrizIndividual(resultado.getM()[filas][columnaPrimera], filas, columnaSegunda);
             resultado.setmatrizIndividual(cambio, filas, columnaPrimera);
-            
+
         }
         return resultado;
     }
-	
-	
-    
+
     /**
-     * Verifica si una matriz es de orden NxN, comparando su número de filas con el número de sus columnas
-     * @param matriz recibe una matriz.
-     * @return true si es una matriz de orden NxN, false de otro modo
-     */
-    private boolean verificarMatrizCuadrada(double[][] matriz) {
-        boolean esCuadrada = true;
-        int filas = matriz.length;
-        int columnas = matriz[0].length;
-        if (filas != columnas) {
-            esCuadrada = false;
-        }
-        return esCuadrada;
-    }
-    /**
-     * Inicializa la matriz identidad colocando 1 en la diagonal principal y 0 en las 
+     * Inicializa la matriz identidad colocando 1 en la diagonal principal y 0 en
+     * las
      * demás celdas
+     * 
      * @param matrizIdentidad matriz identidad a inicializar
      */
     private void inicializarMatrizIdentidad(double[][] matrizIdentidad) {
@@ -311,12 +316,18 @@ public class Matriz {
 
         }
     }
+
     /**
-     * Determina el pivote (escalar) que se utilizará para realizar la operación fundamental, 
-     * el cual consiste en multiplicar una fila de la matriz extendida por un escalar
-     * @param matriz Matriz con la cual determinaremos el pivote 
-     * @param pivote Escalar que se multiplicará por un renglón de la matriz
-     * @param matrizIdentidad Matriz identidad que se modificará conforme se vaya efectuando la operación fundamental
+     * Determina el pivote (escalar) que se utilizará para realizar la operación
+     * fundamental,
+     * el cual consiste en multiplicar una fila de la matriz extendida por un
+     * escalar
+     * 
+     * @param matriz          Matriz con la cual determinaremos el pivote
+     * @param pivote          Escalar que se multiplicará por un renglón de la
+     *                        matriz
+     * @param matrizIdentidad Matriz identidad que se modificará conforme se vaya
+     *                        efectuando la operación fundamental
      */
     private void modificarPivote(double[][] matriz, int pivote, double[][] matrizIdentidad) {
         double pivoteDivisor = 0;
@@ -326,12 +337,16 @@ public class Matriz {
             matrizIdentidad[pivote][columna] = matrizIdentidad[pivote][columna] / pivoteDivisor;
         }
     }
+
     /**
      * Realiza la operación fundamental, el cual consiste en
      * multiplicar una fila de la matriz extendida por un escalar
-     * @param matriz Matriz con la cual determinaremos el pivote 
-     * @param pivote Escalar que se multiplicará por un renglón de la matriz
-     * @param matrizIdentidad Matriz identidad que se modificará conforme se vaya efectuando la operación fundamental
+     * 
+     * @param matriz          Matriz con la cual determinaremos el pivote
+     * @param pivote          Escalar que se multiplicará por un renglón de la
+     *                        matriz
+     * @param matrizIdentidad Matriz identidad que se modificará conforme se vaya
+     *                        efectuando la operación fundamental
      */
     private void realizarOperacionFundamental(double[][] matriz, int pivote, double[][] matrizIdentidad) {
         for (int fila = 0; fila < matriz.length; fila++) {
@@ -345,11 +360,13 @@ public class Matriz {
             }
         }
     }
+
     /**
      * Resuelve un sistema de ecuaciones usando el método de Gauss Jordan
-     * @param matriz representa a los coeficientes de las variables a resolver.
+     * 
+     * @param matriz  representa a los coeficientes de las variables a resolver.
      * @param termino representa a los términos independientes de las ecuaciones
-     * @return  un arreglo con el resultado y el tamaño de las variables a resolver 
+     * @return un arreglo con el resultado y el tamaño de las variables a resolver
      */
     public double[] resolverGaussJordan(double matriz[][], double termino[]) {
 
@@ -377,30 +394,31 @@ public class Matriz {
         }
         return termino;
     }
-	
-	 /**
+
+    /**
      * 
-     * @param entrada objeto tipo Matriz
-     * @param cofactorA 
+     * @param entrada   objeto tipo Matriz
+     * @param cofactorA
      * @param cofactorB
-     * @return 
+     * @return
      */
-     public static double obtenerMatrizAdjunta(Matriz entrada, int cofactorA, int cofactorB){
-        Matriz matrizEvaluar= new Matriz( entrada.getColumnas() - 1, entrada.getFilas() - 1);
+    public static double obtenerMatrizAdjunta(double[][] entrada, int cofactorA, int cofactorB) {
+        Matriz matrizEvaluar = new Matriz();
+        matrizEvaluar.setM(entrada);
         double resultado = 0;
-        int indiceA,indiceB;
-        for(int i=0;i<matrizEvaluar.getFilas();i++){	
-            indiceA = (i<cofactorA) ? i : i+1;
-            for(int l=0;l<matrizEvaluar.getFilas();l++){
-                indiceB = (l<cofactorB) ? l :  l+1;
-                double valorCofactor = entrada.obtenerCopiaMatriz()[indiceA][indiceB];
+        int indiceA, indiceB;
+        for (int i = 0; i < matrizEvaluar.getFilas(); i++) {
+            indiceA = (i < cofactorA) ? i : i + 1;
+            for (int l = 0; l < matrizEvaluar.getFilas(); l++) {
+                indiceB = (l < cofactorB) ? l : l + 1;
+                double valorCofactor = matrizEvaluar.obtenerCopiaMatriz()[indiceA][indiceB];
                 matrizEvaluar.setmatrizIndividual(valorCofactor, i, l);
             }
         }
-        resultado = (int)Math.pow(-1,cofactorA+cofactorB) * calcularDeterminante(matrizEvaluar);	
-        return resultado;				
+        resultado = (int) Math.pow(-1, cofactorA + cofactorB)
+                * matrizEvaluar.calcularDeterminante(matrizEvaluar.getM());
+        return resultado;
     }
-    
 
     public double[][] getM() {
         return matriz;
@@ -425,10 +443,11 @@ public class Matriz {
     public void setColumnas(int columnas) {
         this.columnas = columnas;
     }
-	  public void setmatrizIndividual(double value, int filas, int columnas) {
-        
+
+    public void setmatrizIndividual(double value, int filas, int columnas) {
+
         this.matriz[filas][columnas] = value;
-        
+
     }
 
 }

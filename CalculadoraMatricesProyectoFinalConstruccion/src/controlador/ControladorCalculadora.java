@@ -18,6 +18,7 @@ import Modelo.Matriz;
 public class ControladorCalculadora implements ActionListener {
     String DETERMINANTE = "determinante";
     String INVERSA = "inversa";
+    String TRANSPUESTA = "transpuesta";
     String MULTIPLICAR_ESCALAR = "multiplicar_escalar";
     String MULTIPLICAR_MATRICES = "multiplicar_matrices";
     String SUMA = "suma";
@@ -34,6 +35,7 @@ public class ControladorCalculadora implements ActionListener {
     double[][] matrizADouble;
     double[][] matrizBDouble;
     double[][] matrizResultadoDouble;
+    double[] result;
 
     public ControladorCalculadora(vistaCalculadora vista) {
         this.vista = vista;
@@ -45,6 +47,7 @@ public class ControladorCalculadora implements ActionListener {
         this.vista.getCalcularButton().addActionListener(this);
         this.vista.getDeterminante().addActionListener(this);
         this.vista.getInversa().addActionListener(this);
+        this.vista.getTranspuesta().addActionListener(this);
         this.vista.getMultiplicaEscalar().addActionListener(this);
         this.vista.getMultiplicarMatrices().addActionListener(this);
         this.vista.getSuma().addActionListener(this);
@@ -75,6 +78,15 @@ public class ControladorCalculadora implements ActionListener {
                         matrizADouble = getData(primeraMatriz, Integer.valueOf(this.vista.getFilasA().getText()),
                                 Integer.valueOf(this.vista.getColumnasA().getText()));
                         matrizResultadoDouble = model.matrizInversaGaussJordan(matrizADouble);
+                        setMatrizResult(matrizResultadoDouble);
+                        this.vista.getFilasA().setEditable(true);
+                        this.vista.getColumnasA().setEditable(true);
+                        break;
+
+                    case "transpuesta":
+                        matrizADouble = getData(primeraMatriz, Integer.valueOf(this.vista.getFilasA().getText()),
+                                Integer.valueOf(this.vista.getColumnasA().getText()));
+                        matrizResultadoDouble = model.calcularTranspuesta(matrizADouble);
                         setMatrizResult(matrizResultadoDouble);
                         this.vista.getFilasA().setEditable(true);
                         this.vista.getColumnasA().setEditable(true);
@@ -119,14 +131,19 @@ public class ControladorCalculadora implements ActionListener {
                                 (Integer.valueOf(this.vista.getColumnasA().getText())) - 1);
                         double[] termino = getColumnaData(Integer.valueOf(this.vista.getFilasA().getText()),
                                 Integer.valueOf(this.vista.getColumnasA().getText()));
-                        double[] result = model.resolverGaussJordan(matrizADouble, termino);
+                        result = model.resolverGaussJordan(matrizADouble, termino);
                         setColumnaResult(result);
                         this.vista.getFilasA().setEditable(true);
                         this.vista.getColumnasA().setEditable(true);
                         break;
 
                     case "cramer":
-
+                        matrizADouble = getData(primeraMatriz, Integer.valueOf(this.vista.getFilasA().getText()),
+                                Integer.valueOf(this.vista.getColumnasA().getText()));
+                        result = model.calcularCramer(matrizADouble, matrizADouble.length);
+                        setColumnaResult(result);
+                        this.vista.getFilasA().setEditable(true);
+                        this.vista.getColumnasA().setEditable(true);
                         break;
 
                     default:
@@ -149,6 +166,10 @@ public class ControladorCalculadora implements ActionListener {
 
         if (this.vista.getInversa() == e.getSource()) {
             this.vista.getOperacionSeleccionada().setText(this.INVERSA);
+        }
+
+        if (this.vista.getTranspuesta() == e.getSource()) {
+            this.vista.getOperacionSeleccionada().setText(this.TRANSPUESTA);
         }
 
         if (this.vista.getMultiplicaEscalar() == e.getSource()) {
@@ -206,10 +227,12 @@ public class ControladorCalculadora implements ActionListener {
         }
 
     }
+
     /**
      * Obtiene los valores de cada celda de la matriz
-     * @param matriz recibe la matriz de la interfaz gráfica
-     * @param filas recibe la cantidad de filas de la matriz
+     * 
+     * @param matriz   recibe la matriz de la interfaz gráfica
+     * @param filas    recibe la cantidad de filas de la matriz
      * @param columnas recibe la cantidad de columnas de la matriz
      * @return
      */
@@ -222,9 +245,11 @@ public class ControladorCalculadora implements ActionListener {
         }
         return result;
     }
+
     /**
      * Obtiene los valores de cada celda de las columnas de la matriz
-     * @param filas 
+     * 
+     * @param filas
      * @param columna
      * @return
      */
@@ -236,9 +261,12 @@ public class ControladorCalculadora implements ActionListener {
 
         return result;
     }
+
     /**
-     * Establece los valores de la columna para que después de haber realizado la operación seleccionada
-     * @param result el arreglo con los resultados 
+     * Establece los valores de la columna para que después de haber realizado la
+     * operación seleccionada
+     * 
+     * @param result el arreglo con los resultados
      */
     private void setColumnaResult(double[] result) {
         for (int i = 0; i < FILAS_MAXIMAS; i++) {
@@ -253,9 +281,12 @@ public class ControladorCalculadora implements ActionListener {
         }
         this.vista.getMatrizRPanel().setVisible(true);
     }
+
     /**
-     * Establece los valores de la matriz para que después de haber realizado la operación seleccionada
-     * @param matrizResult la matriz con los datos 
+     * Establece los valores de la matriz para que después de haber realizado la
+     * operación seleccionada
+     * 
+     * @param matrizResult la matriz con los datos
      */
     private void setMatrizResult(double[][] matrizResult) {
 
@@ -276,8 +307,10 @@ public class ControladorCalculadora implements ActionListener {
         this.vista.getMatrizRPanel().setVisible(true);
 
     }
+
     /**
      * Presenta la matriz en la interfaz gráfica
+     * 
      * @param matriz
      * @param filas
      * @param columnas
