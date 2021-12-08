@@ -19,7 +19,7 @@ public class Matriz {
         this.matriz = new double[filas][columnas];
     }
 
-    public void insertar(int fila, int columna, int valor) {
+    public void insertar(int fila, int columna, double valor) {
         this.matriz[fila][columna] = valor;
     }
 
