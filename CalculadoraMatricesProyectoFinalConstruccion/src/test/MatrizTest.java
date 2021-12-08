@@ -106,7 +106,7 @@ public class MatrizTest {
         matrizA.insertar(1, 1, 7);
         double resultado = 0;
         try {
-            resultado = matrizA.calcularDeterminante(matrizA.getM());
+            resultado = matrizA.determinante(matrizA.getM());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,55 +119,7 @@ public class MatrizTest {
     }
 
     /**
-     * private boolean verificarMatrizCuadrada(double[][] matriz) {
-     * boolean esCuadrada = true;
-     * int filas = matriz.length;
-     * int columnas = matriz[0].length;
-     * if (filas != columnas) {
-     * esCuadrada = false;
-     * }
-     * return esCuadrada;
-     * }
-     * 
-     * private void inicializarMatrizIdentidad(double[][] matrizIdentidad) {
-     * for (int fila = 0; fila < matrizIdentidad.length; fila++) {
-     * for (int columna = 0; columna < matrizIdentidad.length; columna++) {
-     * if (fila == columna) {
-     * matrizIdentidad[fila][columna] = 1;
-     * } else {
-     * matrizIdentidad[fila][columna] = 0;
-     * }
-     * }
-     * 
-     * }
-     * }
-     * 
-     * private void modificarPivote(double[][] matriz, int pivote,
-     * double[][] matrizIdentidad) {
-     * double pivoteDivisor = 0;
-     * pivoteDivisor = matriz[pivote][pivote];
-     * for (int columna = 0; columna < matriz.length; columna++) {
-     * matriz[pivote][columna] = matriz[pivote][columna] / pivoteDivisor;
-     * matrizIdentidad[pivote][columna] = matrizIdentidad[pivote][columna] /
-     * pivoteDivisor;
-     * }
-     * }
-     * 
-     * private void realizarOperacionFundamental(double[][] matriz, int
-     * pivote, double[][] matrizIdentidad) {
-     * for (int fila = 0; fila < matriz.length; fila++) {
-     * if (fila != pivote) {
-     * double escalar = matriz[fila][pivote];
-     * for (int columna = 0; columna < matriz.length; columna++) {
-     * matriz[fila][columna] = ((-1 * escalar) * matriz[pivote][columna]) +
-     * matriz[fila][columna];
-     * matrizIdentidad[fila][columna] = ((-1 * escalar) *
-     * matrizIdentidad[pivote][columna])
-     * + matrizIdentidad[fila][columna];
-     * }
-     * }
-     * }
-     * }
+     *
      * 
      * public double[] resolverGaussJordan(double matriz[][], double
      * termino[]) {
@@ -198,11 +150,8 @@ public class MatrizTest {
      * return termino;// retorna terminos
      * }
      * 
-     * public double[][] getM() {
-     * return matriz;
-     * }
-     * 
      *
+     * 
      */
 
 }

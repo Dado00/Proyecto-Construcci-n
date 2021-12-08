@@ -206,7 +206,13 @@ public class ControladorCalculadora implements ActionListener {
         }
 
     }
-
+    /**
+     * Obtiene los valores de cada celda de la matriz
+     * @param matriz recibe la matriz de la interfaz gráfica
+     * @param filas recibe la cantidad de filas de la matriz
+     * @param columnas recibe la cantidad de columnas de la matriz
+     * @return
+     */
     private double[][] getData(JTextField[][] matriz, int filas, int columnas) {
         double[][] result = new double[filas][columnas];
         for (int i = 0; i < filas; i++) {
@@ -216,7 +222,12 @@ public class ControladorCalculadora implements ActionListener {
         }
         return result;
     }
-
+    /**
+     * Obtiene los valores de cada celda de las columnas de la matriz
+     * @param filas 
+     * @param columna
+     * @return
+     */
     private double[] getColumnaData(int filas, int columna) {
         double[] result = new double[filas];
         for (int i = 0; i < filas; i++) {
@@ -225,8 +236,16 @@ public class ControladorCalculadora implements ActionListener {
 
         return result;
     }
+<<<<<<< HEAD
 
     private void setColumnaResult(double[] result) {
+=======
+    /**
+     * Establece los valores de la columna para que después de haber realizado la operación seleccionada
+     * @param result el arreglo con los resultados 
+     */
+    private void setColumnaReslut(double[] result) {
+>>>>>>> cda364ad22d08bd568be0bf6b04d6e22ab7c6f83
         for (int i = 0; i < FILAS_MAXIMAS; i++) {
             for (int j = 0; j < COLUMNAS_MAXIMAS; j++) {
                 this.terceraMatriz[i][j].setText(null);
@@ -239,7 +258,10 @@ public class ControladorCalculadora implements ActionListener {
         }
         this.vista.getMatrizRPanel().setVisible(true);
     }
-
+    /**
+     * Establece los valores de la matriz para que después de haber realizado la operación seleccionada
+     * @param matrizResult la matriz con los datos 
+     */
     private void setMatrizResult(double[][] matrizResult) {
 
         for (int i = 0; i < FILAS_MAXIMAS; i++) {
@@ -259,7 +281,12 @@ public class ControladorCalculadora implements ActionListener {
         this.vista.getMatrizRPanel().setVisible(true);
 
     }
-
+    /**
+     * Presenta la matriz en la interfaz gráfica
+     * @param matriz
+     * @param filas
+     * @param columnas
+     */
     private void mostrarMatriz(JTextField[][] matriz, int filas, int columnas) {
 
         for (int i = 0; i < FILAS_MAXIMAS; i++) {
