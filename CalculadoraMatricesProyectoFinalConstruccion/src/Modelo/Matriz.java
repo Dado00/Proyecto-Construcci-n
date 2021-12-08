@@ -126,45 +126,57 @@ public class Matriz {
      * Calcula la determinante de una matriz no singular y cuadrada
      * @param matriz Recibe la matriz de orden NxN
      * @return Un número que es la determinante de la matriz
-     * @throws Exception Genera un mensaje si la matriz no es cuadrada.
      */
-    public double calcularDeterminante(double[][] matriz) throws Exception {
-        double determinante;
-        boolean esCuadrada = verificarMatrizCuadrada(matriz);
-        if (esCuadrada) {
-            if (matriz.length == 2) {
-                determinante = (matriz[0][0] * matriz[1][1]) - (matriz[1][0] * matriz[0][1]);
-                ;
-                return (double) determinante;
-            }
-            double suma = 0;
-            int totalRenglones = matriz.length;
-            for (int fila = 0; fila < totalRenglones; fila++) {
-                double[][] matrizResultado = new double[matriz.length - 1][matriz.length - 1];
-                for (int columna = 0; columnas < totalRenglones; columna++) {
-                    if (columna != fila) {
-                        for (int k = 1; k < totalRenglones; k++) {
-                            int indice = -1;
-                            if (columna < fila) {
-                                indice = columna;
-                            } else if (columna > fila) {
-                                indice = columna - 1;
-                                matrizResultado[indice][k - 1] = matriz[columna][k];
-                            }
-                        }
-                    }
-                }
-                if (fila % 2 == 0) {
-                    suma += matriz[fila][0] * calcularDeterminante(matrizResultado);
-                } else {
-                    suma -= matriz[fila][0] * calcularDeterminante(matrizResultado);
-                }
-            }
-            return (double) suma;
-        } else {
-            throw new Exception("Se necesita una matriz cuadrada para calcular la determinante");
-        }
-    }
+ public static double determinante (double [][] matriz)
+	{
+            //Validar que la matriz no sea nula; debe tenga una longitud mayor a 0
+		assert matriz != null;
+		assert matriz.length>0;
+		assert matriz.length == matriz[0].length;
+		
+		double determinante = 0.0;
+		
+		int filas = matriz.length;
+		int columnas = matriz[0].length;
+		
+		// Si la matriz es 1x1, el determinante es el elemento de la matriz
+		if ((filas==1) && (columnas==1))
+			return matriz[0][0];
+		//Valor para ir cambiando el signo de los coeficientes
+		int signo=1;
+		for (int columna=0;columna<columnas;columna++)
+		{
+	// Obtiene el adjunto de fila=0, columna=columna, pero sin el signo.
+			double[][] submatriz = getSubmatriz(matriz, filas, columnas,
+					columna);
+			determinante = determinante + signo*matriz[0][columna]*determinante(submatriz);
+			signo*=-1;
+		}
+		
+		return determinante;
+	}
+
+	/**
+	 *La submatriz resulta de elminar la primera fila y la columna que pasa como parámetro
+	 * @param matriz Matriz original
+	 * @param filas Numero de filas de la matriz original
+	 * @param columnas Numero de columnas de la matriz original
+	 * @param columna Columna que se quiere eliminar, junto con la fila=0
+	 * @return Una matriz de N-1 x N-1 elementos
+	 */
+	public static double[][] getSubmatriz(double[][] matriz, int filas,int columnas, int columna) {
+		double [][] submatriz = new double[filas-1][columnas-1];
+		int contador=0;
+		for (int j=0;j<columnas;j++)
+		{
+			if (j==columna) continue;
+			for (int i=1;i<filas;i++)
+				submatriz[i-1][contador]=matriz[i][j];
+			contador++;
+		}
+		return submatriz;
+	}
+    
     /**
      * Verifica si una matriz es de orden NxN, comparando su número de filas con el número de sus columnas
      * @param matriz recibe una matriz.
