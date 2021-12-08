@@ -425,5 +425,10 @@ public class Matriz {
     public void setColumnas(int columnas) {
         this.columnas = columnas;
     }
+	  public void setmatrizIndividual(double value, int filas, int columnas) {
+        
+        this.matriz[filas][columnas] = value;
+        
+    }
 
 }
