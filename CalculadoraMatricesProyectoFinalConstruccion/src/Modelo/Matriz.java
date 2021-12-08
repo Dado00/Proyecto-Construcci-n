@@ -419,6 +419,96 @@ public class Matriz {
                 * matrizEvaluar.calcularDeterminante(matrizEvaluar.getM());
         return resultado;
     }
+      /**
+     * Perform system of equations by the Gauss Jordan method
+     * @param matrizEntrada Matriz que recibe la función para resolver por Gauss-Jordan
+     * @param nivel el orden de la matriz a resolver
+     * @return 
+     */
+    
+    public Matriz resolverGaussJordan(Matriz matrizEntrada, int nivel){
+        Matriz matrizResultante = new Matriz(matrizEntrada.getFilas(), matrizEntrada.getColumnas());
+        matrizResultante.setM(matrizEntrada.obtenerCopiaMatriz());
+        double aux[][] = matrizResultante.getM();
+        int posicion;
+        for (int indice = 0; indice < nivel; indice++){
+            if (aux[indice][indice] == 0){
+                posicion = 1;
+                while ((indice + posicion) < nivel && aux[indice + posicion][indice] == 0)
+                    posicion++;           
+                if ((indice + posicion) == nivel) {
+                    break;
+                }
+                for (int i = indice, j = 0; j <= nivel; j++)
+                    obtenerValores(matrizResultante, i, j, i+posicion, j);
+            }
+
+            matrizResultante = obtenerFormaReducida(matrizResultante);
+        }
+        
+        return matrizResultante;
+        
+    }
+    
+       
+
+    public static void obtenerValores(Matriz matrizEntrada, int posicionAx, int posicionAy, int posicionBx, int posicionBy){
+        double aux[][] = matrizEntrada.getM(); 
+        double valorAuxiliar = aux[posicionAx][posicionAy];
+        aux[posicionAx][posicionAy] = aux[posicionBx][posicionBy];
+        aux[posicionBx][posicionBy] = valorAuxiliar;
+        
+    }
+    /**
+     * 
+     * @param matrizEntrada
+     * @param filaMatrizA primer valor de la fila de la matriz A
+     * @param filaMatrizB primer valor de la fila de la matriz B
+     */
+ private static void obtenerValores(Matriz matrizEntrada, int filaMatrizA, int filaMatrizB) {
+        double[] auxiliar = matrizEntrada.getM()[filaMatrizA];
+        matrizEntrada.getM()[filaMatrizA] = matrizEntrada.getM()[filaMatrizB];
+        matrizEntrada.getM()[filaMatrizB] = auxiliar;
+    }
+    /**
+     * Función para realizar eliminaciones en la matriz y dejarla en forma escalonada
+     * @param matrizEntrada 
+     * @return 
+     */
+      public  Matriz obtenerFormaReducida(Matriz matrizEntrada) {
+        int filas = matrizEntrada.getFilas();
+        int columnas = matrizEntrada.getColumnas();
+        Matriz resultado = new Matriz(filas, columnas);
+        resultado.setM(matrizEntrada.obtenerCopiaMatriz());
+        double aux[][] = resultado.getM();
+        
+        for (int fila = 0, indice = 0; fila < filas && indice < columnas; ++fila, ++indice) {
+            int i = fila;
+            while (aux[i][indice] == 0) {
+                if (++i == filas) {
+                    i = fila;
+                    if (++indice == columnas)
+                        return resultado;
+                }
+            }
+            obtenerValores(matrizEntrada, i, fila);
+            if (aux[fila][indice] != 0) {
+                double f = aux[fila][indice];
+                for (int column = 0; column < columnas; ++column)
+                    aux[fila][column] /= f;
+            }
+            for (int j = 0; j < filas; ++j) {
+                if (j == fila)
+                    continue;
+                double f = aux[j][indice];
+                for (int column = 0; column < columnas; ++column)
+                    aux[j][column] -= f * aux[fila][column];
+            }
+        }
+        
+        return resultado;
+
+    }
 
     public double[][] getM() {
         return matriz;
