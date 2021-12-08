@@ -56,6 +56,22 @@ public class Matriz {
         }
         return matrizResultado;
     }
+/**Transpuesta
+ * 
+ * @param mat
+ * @return 
+ */    
+    public double [ ][ ] transpuesta(double [ ][ ] mat){
+        double [ ][ ] matrizT=new double [mat[0].length][mat.length];
+        for(int i=0;i<mat.length;i++){
+            for(int j=0;j<mat[i].length;j++){
+                matrizT[j][i]=mat[i][j];
+                
+       
+             }
+        }
+        return matrizT;
+    }	
     /**
      * Multiplica una matriz de orden MxN por un escalar C
      * @param escalar recibe el escalar C
